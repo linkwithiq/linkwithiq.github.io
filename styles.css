@@ -552,6 +552,14 @@ section{padding:var(--space-7) 0;}
   margin-top:2px;
 }
 .project-card p{color:var(--cream-dim); font-size:14.5px; flex:1;}
+.project-stats{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--rust);
+  letter-spacing:0.2px;
+  flex:none !important;
+  margin-top:-4px;
+}
 
 .section-teaser-link{
   display:inline-flex;

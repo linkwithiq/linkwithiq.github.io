@@ -260,6 +260,52 @@ if (newsletterForm) {
   });
 }
 
+// ---- live GitHub stats on project cards ----
+// Fetches directly from the browser to api.github.com — no backend, nothing
+// proxied or logged on our end (matches what the Privacy Policy already
+// discloses about how project-card stats work).
+function formatRelativeDate(isoString) {
+  const then = new Date(isoString);
+  const days = Math.floor((Date.now() - then.getTime()) / 86400000);
+  if (days <= 0) return 'today';
+  if (days === 1) return '1 day ago';
+  if (days < 30) return `${days} days ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} mo ago`;
+  const years = Math.floor(months / 12);
+  return `${years} yr ago`;
+}
+
+async function loadProjectStats() {
+  const cards = document.querySelectorAll('[data-repo]');
+  const requests = Array.from(cards).map(async (card) => {
+    const repo = card.dataset.repo;
+    const statsEl = card.querySelector('.project-stats');
+    if (!repo || !statsEl) return;
+    try {
+      const res = await fetch(`https://api.github.com/repos/${repo}`, {
+        headers: { Accept: 'application/vnd.github+json' }
+      });
+      if (!res.ok) return; // rate-limited or not found — fail quietly, no fake data
+      const data = await res.json();
+      const stars = typeof data.stargazers_count === 'number' ? data.stargazers_count : null;
+      const updated = data.pushed_at ? formatRelativeDate(data.pushed_at) : null;
+      if (stars === null && !updated) return;
+      const parts = [];
+      if (stars !== null) parts.push(`★ ${stars}`);
+      if (updated) parts.push(`updated ${updated}`);
+      statsEl.textContent = parts.join(' · ');
+      statsEl.hidden = false;
+    } catch (err) {
+      // network error, offline, blocked by an extension, etc. — leave hidden
+    }
+  });
+  await Promise.all(requests);
+}
+if (document.querySelector('[data-repo]')) {
+  loadProjectStats();
+}
+
 if (!PREFERS_REDUCED_MOTION && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
     '.mission-card, .project-card, .resource-row, .process-step, .founder, .faq-item'
