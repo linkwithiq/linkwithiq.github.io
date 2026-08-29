@@ -125,6 +125,35 @@ navLinks.addEventListener('keydown', (e) => {
   }
 });
 
+// ---- light/dark theme toggle ----
+// The <html> element may already have data-theme="light" set by the
+// synchronous anti-flash script in <head>; this just wires up the button
+// and persists changes the same way (localStorage key 'liq-theme', as
+// disclosed in the Privacy Policy — never leaves the device).
+(function initThemeToggle(){
+  const toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+
+  function isLight(){
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  }
+  function updateLabel(){
+    toggle.setAttribute('aria-label', isLight() ? 'Switch to dark theme' : 'Switch to light theme');
+  }
+  updateLabel();
+
+  toggle.addEventListener('click', () => {
+    if (isLight()) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('liq-theme', 'dark'); } catch (e) { /* unavailable — fine, just won't persist */ }
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('liq-theme', 'light'); } catch (e) { /* unavailable — fine, just won't persist */ }
+    }
+    updateLabel();
+  });
+})();
+
 // ---- signature "peak" divider, echoing the logo's mountain silhouette ----
 function buildPeakRule(el){
   const w = 1200, h = 14;
@@ -188,27 +217,77 @@ if ('IntersectionObserver' in window && spySections.length) {
   spySections.forEach(section => spyObserver.observe(section));
 }
 
-// ---- project filter tabs ----
+// ---- project filter tabs + search ----
 const filterTabs = document.querySelectorAll('.filter-tab');
 const projectCards = document.querySelectorAll('.project-card');
 const filterEmpty = document.getElementById('filterEmpty');
+const projectSearch = document.getElementById('projectSearch');
+
+let activeStatusFilter = 'all';
+
+function cardMatchesSearch(card, query){
+  if (!query) return true;
+  const haystack = card.dataset.searchText || (() => {
+    const title = card.querySelector('h3')?.textContent || '';
+    const desc = card.querySelector('p')?.textContent || '';
+    const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent).join(' ');
+    const text = `${title} ${desc} ${tags}`.toLowerCase();
+    card.dataset.searchText = text; // cache — the text itself never changes
+    return text;
+  })();
+  return haystack.includes(query);
+}
+
+function applyProjectFilters(){
+  const query = (projectSearch?.value || '').trim().toLowerCase();
+  let visibleCount = 0;
+  projectCards.forEach(card => {
+    const statusMatch = activeStatusFilter === 'all' || card.dataset.status === activeStatusFilter;
+    const searchMatch = cardMatchesSearch(card, query);
+    const match = statusMatch && searchMatch;
+    card.classList.toggle('filtered-out', !match);
+    if (match) visibleCount++;
+  });
+  if (filterEmpty) filterEmpty.hidden = visibleCount !== 0;
+}
 
 filterTabs.forEach(tab => {
   tab.addEventListener('click', () => {
     filterTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
     tab.classList.add('active');
     tab.setAttribute('aria-pressed', 'true');
-
-    const filter = tab.dataset.filter;
-    let visibleCount = 0;
-    projectCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.status === filter;
-      card.classList.toggle('filtered-out', !match);
-      if (match) visibleCount++;
-    });
-    if (filterEmpty) filterEmpty.hidden = visibleCount !== 0;
+    activeStatusFilter = tab.dataset.filter;
+    applyProjectFilters();
   });
 });
+
+if (projectSearch) {
+  projectSearch.addEventListener('input', applyProjectFilters);
+}
+
+// ---- resource search (resources.html) ----
+const resourceSearch = document.getElementById('resourceSearch');
+if (resourceSearch) {
+  const resourceRows = document.querySelectorAll('.resource-row');
+  const resourceEmpty = document.getElementById('resourceSearchEmpty');
+  resourceSearch.addEventListener('input', () => {
+    const query = resourceSearch.value.trim().toLowerCase();
+    let visibleCount = 0;
+    resourceRows.forEach(row => {
+      const text = row.dataset.searchText || (() => {
+        const title = row.querySelector('h3')?.textContent || '';
+        const desc = row.querySelector('p')?.textContent || '';
+        const t = `${title} ${desc}`.toLowerCase();
+        row.dataset.searchText = t;
+        return t;
+      })();
+      const match = !query || text.includes(query);
+      row.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    if (resourceEmpty) resourceEmpty.hidden = visibleCount !== 0;
+  });
+}
 
 // ---- copy email button ----
 const copyEmailBtn = document.getElementById('copyEmailBtn');

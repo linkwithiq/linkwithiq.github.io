@@ -47,6 +47,23 @@
   --space-7: 96px;
 }
 
+/* ---------- light theme overrides ----------
+   Roles flip: ink/cream swap, panels go from dark-brown to white/paper,
+   hairline borders switch to dark-based transparency so they stay visible
+   on a light background. Rust stays the same brand orange for large fills
+   (buttons, logo, progress bar); --link gets a deeper, higher-contrast
+   shade so small accent text/links stay readable on a light background. */
+:root[data-theme="light"]{
+  --ink:        #f7f1e2;
+  --ink-soft:   #efe4cd;
+  --ink-panel:  #ffffff;
+  --cream:      #1a1108;
+  --cream-dim:  #5c503c;
+  --hair:       rgba(26,17,8,0.12);
+  --hair-strong:rgba(26,17,8,0.24);
+  --link:       var(--rust-deep);
+}
+
 *{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
 #mission, #projects, #resources, #process, #faq, #about, #contact{
@@ -279,6 +296,27 @@ body.is-loading{overflow:hidden;}
   justify-content:center;
   cursor:pointer;
 }
+.theme-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid var(--hair-strong);
+  background:none;
+  color:var(--cream-dim);
+  cursor:pointer;
+  transition:color .2s ease, border-color .2s ease, transform .2s ease;
+  flex:none;
+}
+.theme-toggle:hover, .theme-toggle:focus-visible{
+  color:var(--rust);
+  border-color:var(--rust-deep);
+}
+.theme-toggle .icon-moon{display:none;}
+[data-theme="light"] .theme-toggle .icon-sun{display:none;}
+[data-theme="light"] .theme-toggle .icon-moon{display:block;}
 
 .nav-toggle{
   display:none;
@@ -511,13 +549,47 @@ section{padding:var(--space-7) 0;}
   background:currentColor;
 }
 
-/* ---------- filter tabs ---------- */
+/* ---------- filter tabs + search ---------- */
+.project-toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-3);
+  margin-bottom:var(--space-5);
+}
 .filter-tabs{
   display:flex;
   flex-wrap:wrap;
   gap:var(--space-2);
-  margin-bottom:var(--space-5);
 }
+.search-field{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--hair-strong);
+  border-radius:100px;
+  padding:8px 14px;
+  color:var(--cream-dim);
+  flex:none;
+  width:100%;
+  max-width:240px;
+  transition:border-color .15s ease;
+}
+.search-field:focus-within{border-color:var(--rust);}
+.search-field svg{flex:none; opacity:0.7;}
+.search-field input{
+  background:none;
+  border:none;
+  outline:none;
+  color:var(--cream);
+  font-family:var(--body);
+  font-size:14px;
+  width:100%;
+}
+.search-field input::placeholder{color:var(--cream-dim);}
+/* Remove the native browser "x" clear icon so it matches our custom styling */
+.search-field input::-webkit-search-cancel-button{-webkit-appearance:none;}
 .filter-tab{
   font-family:var(--mono);
   font-size:13px;
