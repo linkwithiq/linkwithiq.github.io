@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<title>About — Link with iQ</title>
+<meta name="description" content="Link with iQ is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+
+<link rel="icon" type="image/svg+xml" href="assets/svg/logo-mark-rust.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
+
+<meta property="og:title" content="About — Link with iQ">
+<meta property="og:description" content="Link with iQ is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+<meta property="og:image" content="assets/logo-mark-900.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://linkwithiq.github.io/about.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Link with iQ">
+<meta name="twitter:description" content="Link with iQ is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+<meta name="twitter:image" content="assets/logo-mark-900.png">
+
+<link rel="canonical" href="https://linkwithiq.github.io/about.html">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1108">
+<meta name="color-scheme" content="dark light">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loading">
+
+<noscript><style>.loading-screen{display:none !important;} body{overflow:auto !important;}</style></noscript>
+
+<div class="loading-screen" id="loadingScreen" aria-hidden="true">
+  <div class="loading-inner">
+    <svg class="loading-mark" viewBox="0 0 240 265" width="110" height="122">
+      <path id="loadingPathOuter" d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-opacity="0" fill-rule="evenodd" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path id="loadingPathDrop" d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    </svg>
+    <span class="loading-wordmark" id="loadingWordmark">Link with <em>iQ</em></span>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var ls = document.getElementById('loadingScreen');
+    if (ls && !ls.classList.contains('done')) { ls.classList.add('done'); }
+    document.body.classList.remove('is-loading');
+  }, 6000);
+</script>
+
+<a href="index.html#top" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html#top" class="brand" aria-label="Link with iQ home">
+      <svg class="brand-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+        <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+        <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">Link with <span>iQ</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <button class="nav-close" id="navClose" aria-label="Close navigation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 2l12 12M14 2L2 14"/></svg>
+      </button>
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#contact" class="cta-link">Get in touch</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h14M2 9h14M2 14h14"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:var(--space-6);">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">Independent R&amp;D — founded by Ajit (ASRBMY)</span>
+      <h1 style="margin-top:var(--space-3);">Research. Build.<br>Improve.</h1>
+      <p class="lede">Link with iQ is an independent research and development organization. We research ideas, develop useful technologies, and create practical solutions to real-world problems — aiming to make technology more useful, private, accessible, simple, open, and beneficial to people.</p>
+    </div>
+  </section>
+
+  <section id="belief">
+    <div class="wrap">
+      <div class="section-head" style="max-width:72ch;">
+        <span class="eyebrow">What we believe</span>
+        <h2>Technology should have a purpose</h2>
+        <p>We don't believe technology should be created simply because something is technically possible. Technology should not exist only for complexity, profit, or convenience for a small number of people. Good technology should solve meaningful problems, respect people and their privacy, and be accessible to as many people as possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="our-mission">
+    <div class="wrap">
+      <div class="section-head" style="max-width:72ch;">
+        <span class="eyebrow">Our mission</span>
+        <h2>Practical technology, built responsibly</h2>
+        <p>To research, develop, and share practical technology that solves real-world problems while prioritizing privacy, accessibility, simplicity, openness, and human benefit. We aim to turn ideas and research into useful tools, software, products, and resources that can make people's lives easier and technology better.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we do</span>
+        <h2>Research, software, and technology development</h2>
+        <p>Our work spans research, experimentation, software development, and technology development.</p>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <span class="num">R&amp;D</span>
+          <h3>Research &amp; Development</h3>
+          <p>Investigating technologies, ideas, and methods that can address real-world problems.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">BUILD</span>
+          <h3>Software &amp; Tools</h3>
+          <p>Creating applications, utilities, platforms, libraries, and developer tools.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">PRIVACY</span>
+          <h3>Privacy Technology</h3>
+          <p>Exploring ways to protect personal information and give users greater control over their digital lives.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">SECURITY</span>
+          <h3>Security</h3>
+          <p>Developing and researching technologies that can make digital systems safer.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">OPEN</span>
+          <h3>Open Source</h3>
+          <p>Releasing as much of our work as reasonably possible for others to study, use, modify, and improve.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">ACCESS</span>
+          <h3>Accessibility</h3>
+          <p>Making technology easier to understand and available to people with different levels of technical knowledge.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">AUTOMATE</span>
+          <h3>Automation</h3>
+          <p>Building tools that reduce repetitive work and improve efficiency.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">EXPLORE</span>
+          <h3>Experimental Technology</h3>
+          <p>Exploring new concepts, prototypes, and emerging technologies.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">SHARE</span>
+          <h3>Knowledge Sharing</h3>
+          <p>Publishing documentation, research, technical information, and educational resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources" id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our principles</span>
+        <h2>What we don't compromise on</h2>
+      </div>
+      <div class="resource-list">
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">01</span>
+          <h3>Privacy First</h3>
+          <p>We aim to minimize unnecessary data collection, reduce unnecessary tracking, and give users meaningful control over their information. Whenever technically practical, we prefer approaches that allow data to remain under the user's control. Privacy should be considered during the design of a technology, not added after it is finished.</p>
+        </div>
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">02</span>
+          <h3>Open by Default</h3>
+          <p>Technology and knowledge become more valuable when people can inspect, understand, learn from, and improve them. Our goal is: open as much as responsibly possible. Some projects may remain partially or completely closed when security, privacy, legal, safety, or third-party licensing considerations require it.</p>
+        </div>
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">03</span>
+          <h3>Free &amp; Accessible</h3>
+          <p>We want useful technology available to as many people as possible. Where practical, we aim to provide tools and resources free of charge — particularly for students, developers, researchers, communities, and people who may not have access to expensive technology.</p>
+        </div>
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">04</span>
+          <h3>Simplicity</h3>
+          <p>Technology should not be unnecessarily complicated. We aim to remove unnecessary complexity and create tools that are understandable and practical. A powerful tool should still be easy to use.</p>
+        </div>
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">05</span>
+          <h3>Real-World Impact</h3>
+          <p>We focus on problems rather than technology for its own sake: Problem → Research → Experiment → Prototype → Build → Improve. A project doesn't need to be revolutionary to be valuable — solving a small problem effectively can make a meaningful difference.</p>
+        </div>
+        <div class="resource-row resource-row-3col">
+          <span class="resource-index">06</span>
+          <h3>Continuous Improvement</h3>
+          <p>Technology is constantly changing. We experiment, test, learn from failures, improve our designs, and keep developing. A failed experiment can still produce valuable knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Not limited to one field</span>
+        <h2>Areas of interest</h2>
+        <p>These may change as new technologies and real-world problems emerge.</p>
+      </div>
+      <div class="tag-row" style="flex-wrap:wrap; gap:10px;">
+        <span class="tag">Artificial Intelligence</span>
+        <span class="tag">Software Engineering</span>
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Privacy-Preserving Technology</span>
+        <span class="tag">Open-Source Software</span>
+        <span class="tag">Developer Tools</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Internet Technologies</span>
+        <span class="tag">Data Management</span>
+        <span class="tag">Human-Computer Interaction</span>
+        <span class="tag">Accessibility</span>
+        <span class="tag">Education Technology</span>
+        <span class="tag">Digital Security</span>
+        <span class="tag">Experimental Computing</span>
+        <span class="tag">Emerging Technologies</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="open-source-approach">
+    <div class="wrap">
+      <div class="section-head" style="max-width:72ch;">
+        <span class="eyebrow">Our approach to open source</span>
+        <h2>Open, and responsibly so</h2>
+        <p>Where appropriate, we aim to publish source code, libraries, tools, documentation, research, technical explanations, experiments, specifications, and educational resources. We encourage developers, researchers, students, and communities to learn from our work and, where the applicable license permits, contribute to or build upon it.</p>
+        <p style="margin-top:var(--space-3);">However, openness must also be responsible. Projects involving sensitive security research, privacy risks, third-party restrictions, or other legitimate concerns may require limitations on what can be publicly released.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="technology-for-people">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Technology for people</span>
+        <h2>Seven things every project aims for</h2>
+        <p>We believe technology should serve people. Our projects aim to be:</p>
+      </div>
+      <div class="process-grid process-grid-4">
+        <div class="process-step">
+          <h3>Useful</h3>
+          <p>Solve genuine problems.</p>
+        </div>
+        <div class="process-step">
+          <h3>Private</h3>
+          <p>Respect users and minimize unnecessary data collection.</p>
+        </div>
+        <div class="process-step">
+          <h3>Accessible</h3>
+          <p>Usable by people with different technical abilities.</p>
+        </div>
+        <div class="process-step">
+          <h3>Simple</h3>
+          <p>Avoid unnecessary complexity.</p>
+        </div>
+        <div class="process-step">
+          <h3>Reliable</h3>
+          <p>Designed with stability and security in mind.</p>
+        </div>
+        <div class="process-step">
+          <h3>Affordable</h3>
+          <p>Reduce unnecessary barriers to access.</p>
+        </div>
+        <div class="process-step">
+          <h3>Open</h3>
+          <p>Share knowledge and source code whenever practical.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Who's behind it</span>
+        <h2>Founder</h2>
+      </div>
+
+      <div class="founder">
+        <div class="founder-avatar" aria-hidden="true">AJ</div>
+        <div>
+          <h3>Ajit (ASRBMY)</h3>
+          <span class="role">Founder — Link with iQ</span>
+          <p>Link with iQ was founded by Ajit (ASRBMY) with the idea of bringing together research, software development, experimentation, and open technology to create solutions with practical value in the real world — built around the principles of privacy, openness, accessibility, experimentation, and practical problem solving. Link with iQ is a personal, independent organization — not a registered company — run and maintained directly by Ajit.</p>
+          <div class="founder-links">
+            <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">asrbmy.github.io</a>
+            <a href="https://github.com/asrbmy" target="_blank" rel="noopener noreferrer">GitHub — @asrbmy</a>
+            <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources" id="vision">
+    <div class="wrap">
+      <div class="section-head" style="max-width:72ch;">
+        <span class="eyebrow">Our vision</span>
+        <h2>An ecosystem worth building</h2>
+        <p>Our long-term vision is to build an ecosystem of useful technologies, research, tools, and resources that people can access, understand, and benefit from. We want Link with iQ to become a place where problems are researched, ideas are explored, experiments are encouraged, useful tools are built, and knowledge is shared — where open-source projects grow, privacy is respected, technology becomes easier to use, developers can build upon existing work, and new ideas can become practical solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="philosophy">
+    <div class="wrap">
+      <div class="section-head" style="max-width:70ch;">
+        <span class="eyebrow">The Link with iQ philosophy</span>
+        <h2>Find a problem. Understand it. Build it. Share it.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-mark">1</span>
+          <h3>Find</h3>
+          <p>Find a problem worth solving.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">2</span>
+          <h3>Research</h3>
+          <p>Research it. Understand it.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">3</span>
+          <h3>Build</h3>
+          <p>Build a solution. Learn from what fails.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">4</span>
+          <h3>Share &amp; improve</h3>
+          <p>Share what can be shared. Improve what works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <span class="eyebrow">Say hello</span>
+      <h2>Want to build something together?</h2>
+      <p>Whether it's a problem worth researching or just a question about how this all works, we read everything.</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+        </a>
+        <a href="community.html" class="btn btn-ghost">See how to contribute</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-svg-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+          <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+          <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+        </svg>
+        <span class="footer-wordmark">Link with <em>iQ</em></span>
+        <p>An independent research and development organization building practical, private, and open technology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="index.html#process">How we work</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Read</h4>
+        <a href="blog.html">Blog</a>
+        <a href="research.html">Research</a>
+        <a href="news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="policy.html">Policy</a>
+        <a href="terms.html">Terms &amp; Privacy</a>
+        <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@linkwithiq.dev">Email</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">Ajit (asrbmy)</a></span>
+      <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

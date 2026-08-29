@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<title>What we found scoping civic issue-reporting tools — Link with iQ</title>
+<meta name="description" content="A survey of how residents currently report infrastructure problems, and where the gaps actually are before building Report It.">
+
+<link rel="icon" type="image/svg+xml" href="../assets/svg/logo-mark-rust.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/favicon-192.png">
+
+<meta property="og:title" content="What we found scoping civic issue-reporting tools — Link with iQ">
+<meta property="og:description" content="A survey of how residents currently report infrastructure problems, and where the gaps actually are before building Report It.">
+<meta property="og:image" content="../assets/logo-mark-900.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://linkwithiq.github.io/research/civic-reporting-landscape.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What we found scoping civic issue-reporting tools — Link with iQ">
+<meta name="twitter:description" content="A survey of how residents currently report infrastructure problems, and where the gaps actually are before building Report It.">
+<meta name="twitter:image" content="../assets/logo-mark-900.png">
+
+<link rel="canonical" href="https://linkwithiq.github.io/research/civic-reporting-landscape.html">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#1a1108">
+<meta name="color-scheme" content="dark light">
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="is-loading">
+
+<noscript><style>.loading-screen{display:none !important;} body{overflow:auto !important;}</style></noscript>
+
+<div class="loading-screen" id="loadingScreen" aria-hidden="true">
+  <div class="loading-inner">
+    <svg class="loading-mark" viewBox="0 0 240 265" width="110" height="122">
+      <path id="loadingPathOuter" d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-opacity="0" fill-rule="evenodd" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path id="loadingPathDrop" d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    </svg>
+    <span class="loading-wordmark" id="loadingWordmark">Link with <em>iQ</em></span>
+  </div>
+</div>
+<script>
+  setTimeout(function () {
+    var ls = document.getElementById('loadingScreen');
+    if (ls && !ls.classList.contains('done')) { ls.classList.add('done'); }
+    document.body.classList.remove('is-loading');
+  }, 6000);
+</script>
+
+<a href="../index.html#top" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html#top" class="brand" aria-label="Link with iQ home">
+      <svg class="brand-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+        <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+        <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">Link with <span>iQ</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <button class="nav-close" id="navClose" aria-label="Close navigation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 2l12 12M14 2L2 14"/></svg>
+      </button>
+      <a href="../index.html#mission">Mission</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../about.html">About</a>
+      <a href="../index.html#contact" class="cta-link">Get in touch</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h14M2 9h14M2 14h14"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="project-detail-hero">
+    <div class="wrap">
+      <a href="../research.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 3L3 11M3 11H9M3 11V5"/></svg>
+        All research
+      </a>
+
+      <div class="article-meta">
+        <span>Aug 2026</span>
+        <span class="stats-sep">·</span>
+        <span class="tag">civic tech</span>
+        <span class="tag">early research</span>
+      </div>
+
+      <h1 class="article-title">What we found scoping civic issue-reporting tools</h1>
+      <p class="article-dek">A survey of how residents currently report infrastructure problems, and where the gaps actually are before we write a line of Report It.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="article-body">
+        <p><strong>Status: early.</strong> This is groundwork for Report It, which is still at the concept stage. Nothing here should be read as a finished product decision — it's the reasoning we're working from.</p>
+
+        <h2>The starting question</h2>
+        <p>Before building anything, we wanted to understand: when a resident notices a pothole, broken streetlight, or unsafe crossing, what actually happens when they try to report it today? Where does that process break down?</p>
+
+        <h2>What we looked at</h2>
+        <ul>
+          <li>Public-facing 311-style reporting portals in a handful of mid-sized cities</li>
+          <li>Existing open-source civic reporting projects and why some appear inactive</li>
+          <li>Informal reporting that happens instead — neighborhood social apps, local Facebook groups, direct calls to a council member's office</li>
+        </ul>
+
+        <h2>What stood out</h2>
+        <h3>The intake form usually isn't the hard part</h3>
+        <p>Most cities we looked at do have some kind of online reporting form. The friction wasn't primarily "there's no way to report this" — it was more often that the form was hard to find, wasn't mobile-friendly, or required information (like a precise cross-street or a case category) that residents don't naturally have on hand.</p>
+
+        <h3>The bigger gap is after submission</h3>
+        <p>The more consistent complaint, informally, was silence after reporting — no confirmation, no status, no sense of whether anything happened. Several existing open-source civic tech projects seem to have focused heavily on the submission side and less on closing that status-visibility gap, which may be part of why some haven't sustained active users.</p>
+
+        <h3>Data access varies enormously by city</h3>
+        <p>Some municipalities expose an open API or structured email intake for these reports; many don't, and getting a report into their system means duplicating their exact form fields, or it doesn't reach anyone at all. This is probably the single biggest constraint on what a v1 of Report It can realistically promise.</p>
+
+        <h2>What this means for scope</h2>
+        <p>Given the intake-side friction is real but secondary, and the status-visibility gap seems under-addressed, an early version should probably prioritize: (1) a fast, mobile-first report flow, and (2) a simple, honest status view — even if that status view sometimes just says "submitted, no update from the city yet" rather than pretending to track something the city itself doesn't expose.</p>
+
+        <p>It also means picking a single pilot city with usable intake (API or structured email) before writing the general version — trying to be city-agnostic from day one would mean building against an interface that doesn't reliably exist.</p>
+
+        <blockquote>The lesson so far: the reporting form is rarely the actual bottleneck. What happens — or doesn't — after submission is.</blockquote>
+
+        <p>This is still shaping up. If you've worked on civic reporting tools, or you know a city with a genuinely good public works API, we'd like to hear from you.</p>
+      </div>
+
+      <div class="article-footer">
+        <a href="../research.html" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 3L3 11M3 11H9M3 11V5"/></svg>
+          All research
+        </a>
+        <a href="../index.html#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-svg-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+          <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+          <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+        </svg>
+        <span class="footer-wordmark">Link with <em>iQ</em></span>
+        <p>An independent research and development organization building practical, private, and open technology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="../index.html#mission">Mission</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../index.html#process">How we work</a>
+        <a href="../index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Read</h4>
+        <a href="../blog.html">Blog</a>
+        <a href="../research.html">Research</a>
+        <a href="../news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../policy.html">Policy</a>
+        <a href="../terms.html">Terms &amp; Privacy</a>
+        <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@linkwithiq.dev">Email</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">Ajit (asrbmy)</a></span>
+      <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+</button>
+
+<script src="../script.js"></script>
+</body>
+</html>

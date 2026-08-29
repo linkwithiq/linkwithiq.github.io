@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<title>Link with iQ — Research. Build. Improve.</title>
+<meta name="description" content="Link with iQ is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+
+<link rel="icon" type="image/svg+xml" href="assets/svg/logo-mark-rust.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
+
+<meta property="og:title" content="Link with iQ — Research. Build. Improve.">
+<meta property="og:description" content="An independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+<meta property="og:image" content="assets/logo-mark-900.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://linkwithiq.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Link with iQ — Research. Build. Improve.">
+<meta name="twitter:description" content="An independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open.">
+<meta name="twitter:image" content="assets/logo-mark-900.png">
+
+<link rel="canonical" href="https://linkwithiq.github.io/">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1a1108">
+<meta name="color-scheme" content="dark light">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Link with iQ",
+  "url": "https://linkwithiq.github.io/",
+  "logo": "https://linkwithiq.github.io/assets/logo-mark-900.png",
+  "sameAs": [
+    "https://github.com/linkwithiq"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ajit",
+    "alternateName": "asrbmy",
+    "url": "https://asrbmy.github.io"
+  },
+  "description": "An independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open."
+}
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loading">
+
+<noscript><style>.loading-screen{display:none !important;} body{overflow:auto !important;}</style></noscript>
+
+<div class="loading-screen" id="loadingScreen" aria-hidden="true">
+  <div class="loading-inner">
+    <svg class="loading-mark" viewBox="0 0 240 265" width="110" height="122">
+      <path id="loadingPathOuter" d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-opacity="0" fill-rule="evenodd" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path id="loadingPathDrop" d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+    </svg>
+    <span class="loading-wordmark" id="loadingWordmark">Link with <em>iQ</em></span>
+  </div>
+</div>
+<script>
+  // Fail-safe: if the main script ever fails to load or errors out, never let
+  // the loading screen trap the site — force it away after a short cap.
+  setTimeout(function () {
+    var ls = document.getElementById('loadingScreen');
+    if (ls && !ls.classList.contains('done')) {
+      ls.classList.add('done');
+    }
+    document.body.classList.remove('is-loading');
+  }, 6000);
+</script>
+
+<a href="#top" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Link with iQ home">
+      <svg class="brand-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+        <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+        <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+      </svg>
+      <span class="brand-word">Link with <span>iQ</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <button class="nav-close" id="navClose" aria-label="Close navigation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 2l12 12M14 2L2 14"/></svg>
+      </button>
+      <a href="#mission" data-nav="mission">Mission</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="#contact" class="cta-link">Get in touch</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h14M2 9h14M2 14h14"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Independent R&amp;D — founded by Ajit (ASRBMY)</span>
+          <h1>Research.<br>Build. <em>Improve.</em></h1>
+          <p class="lede">Link with iQ is an independent research and development organization. We research ideas, develop useful technologies, and create practical solutions to real-world problems — aiming to make technology more private, accessible, simple, open, and beneficial to people.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              See what we've built
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Work with us</a>
+          </div>
+
+          <div class="stat-row">
+            <div>
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Open &amp; free to use</span>
+            </div>
+            <div>
+              <span class="stat-num">0</span>
+              <span class="stat-label">Gatekeeping</span>
+            </div>
+            <div>
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Problems worth solving</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-mark">
+          <svg class="hero-svg-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+            <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+            <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+          </svg>
+          <span class="hero-wordmark">Link with <em>iQ</em></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="peak-rule" id="peakRule1" aria-hidden="true"></div>
+
+  <!-- ================= MISSION ================= -->
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our mission</span>
+        <h2>Practical technology, built responsibly</h2>
+        <p>To research, develop, and share practical technology that solves real-world problems — while prioritizing privacy, accessibility, simplicity, openness, and human benefit. Read the full <a href="about.html" style="color:var(--link);">mission and principles</a>.</p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="mission-card">
+          <span class="num">01 / PRIVACY FIRST</span>
+          <h3>Considered by design, not bolted on</h3>
+          <p>We minimize unnecessary data collection and prefer approaches that keep data under the user's control.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">02 / OPEN BY DEFAULT</span>
+          <h3>Open as much as responsibly possible</h3>
+          <p>Code, research, and documentation are public so others can learn from, fork, and improve on the work.</p>
+        </div>
+        <div class="mission-card">
+          <span class="num">03 / REAL-WORLD IMPACT</span>
+          <h3>Problem → research → build → improve</h3>
+          <p>A project doesn't need to be revolutionary to be valuable — solving a small problem well is enough.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we've built</span>
+        <h2>Projects &amp; products</h2>
+        <p>A running list of what Link with iQ is building — some finished, some still in the workshop. Each one exists because someone needed it.</p>
+      </div>
+
+      <div class="filter-tabs" role="group" aria-label="Filter projects by status">
+        <button class="filter-tab active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-tab" data-filter="live" aria-pressed="false">Live</button>
+        <button class="filter-tab" data-filter="building" aria-pressed="false">In progress</button>
+        <button class="filter-tab" data-filter="concept" aria-pressed="false">Concept</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-status="live">
+          <span class="project-status">Live</span>
+          <h3>Community Toolkit</h3>
+          <p>A set of free, plug-and-play tools for small community groups to organise events, track members, and share updates without needing a budget.</p>
+          <div class="tag-row">
+            <span class="tag">web</span>
+            <span class="tag">open-source</span>
+          </div>
+          <a href="https://github.com/linkwithiq/community-toolkit" class="project-link" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card" data-status="building">
+          <span class="project-status building">In progress</span>
+          <h3>Resource Finder</h3>
+          <p>A simple, searchable directory that connects people with local help — food, shelter, legal aid — filtered by location and need, not jargon.</p>
+          <div class="tag-row">
+            <span class="tag">civic</span>
+            <span class="tag">database</span>
+          </div>
+          <a href="https://github.com/linkwithiq/resource-finder" class="project-link" target="_blank" rel="noopener noreferrer">
+            Follow progress
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card" data-status="building">
+          <span class="project-status building">In progress</span>
+          <h3>Study With iQ</h3>
+          <p>Free, structured learning paths and cheat-sheets for students getting started in programming — written in plain language, no prerequisites assumed.</p>
+          <div class="tag-row">
+            <span class="tag">education</span>
+            <span class="tag">docs</span>
+          </div>
+          <a href="https://github.com/linkwithiq/study-with-iq" class="project-link" target="_blank" rel="noopener noreferrer">
+            Follow progress
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card" data-status="live">
+          <span class="project-status">Live</span>
+          <h3>Snippet Library</h3>
+          <p>A growing, curated set of copy-paste-ready code snippets and boilerplate for common product problems, saving builders the reinvention tax.</p>
+          <div class="tag-row">
+            <span class="tag">dev-tools</span>
+            <span class="tag">open-source</span>
+          </div>
+          <a href="https://github.com/linkwithiq/snippet-library" class="project-link" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card" data-status="concept">
+          <span class="project-status concept">Concept</span>
+          <h3>Report It</h3>
+          <p>A lightweight way for residents to flag broken civic infrastructure — potholes, outages, unsafe crossings — and track what happens next.</p>
+          <div class="tag-row">
+            <span class="tag">civic</span>
+            <span class="tag">mobile</span>
+          </div>
+          <a href="https://github.com/linkwithiq/report-it" class="project-link" target="_blank" rel="noopener noreferrer">
+            Follow progress
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+
+        <article class="project-card" data-status="live">
+          <span class="project-status">Live</span>
+          <h3>Portfolio Starter</h3>
+          <p>A no-nonsense, accessible starter template so anyone can put up a personal or project site in an afternoon — no framework fatigue.</p>
+          <div class="tag-row">
+            <span class="tag">template</span>
+            <span class="tag">open-source</span>
+          </div>
+          <a href="https://github.com/linkwithiq/portfolio-starter" class="project-link" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+          </a>
+        </article>
+      </div>
+
+      <p class="filter-empty" id="filterEmpty" hidden>Nothing in this category yet — check back soon, or <a href="#contact">suggest one</a>.</p>
+    </div>
+  </section>
+
+  <div class="peak-rule" id="peakRule2" aria-hidden="true"></div>
+
+  <!-- ================= RESOURCES ================= -->
+  <section class="resources" id="resources">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Free to take</span>
+        <h2>Resources</h2>
+        <p>Guides, templates, and references we've put together along the way — free to read, copy, and reuse.</p>
+      </div>
+
+      <div class="resource-list">
+        <div class="resource-row">
+          <span class="resource-index">01</span>
+          <h3>Getting Started Guide</h3>
+          <p>A plain-language walkthrough for anyone picking up their first project with us — no prior experience assumed.</p>
+          <a href="#contact">Read guide</a>
+        </div>
+        <div class="resource-row">
+          <span class="resource-index">02</span>
+          <h3>Design Tokens Pack</h3>
+          <p>The colour, type, and spacing tokens behind this site — free to fork for your own project or product.</p>
+          <a href="#contact">Get the pack</a>
+        </div>
+        <div class="resource-row">
+          <span class="resource-index">03</span>
+          <h3>Contributor Playbook</h3>
+          <p>How we plan, build, and ship — from first idea to a working release, written down so anyone can join in.</p>
+          <a href="#contact">Read playbook</a>
+        </div>
+        <div class="resource-row">
+          <span class="resource-index">04</span>
+          <h3>Problem Submission Form</h3>
+          <p>Facing a real problem you think we could help with? Tell us about it and we'll see where it fits.</p>
+          <a href="#contact">Submit a problem</a>
+        </div>
+      </div>
+
+      <a href="resources.html" class="section-teaser-link">
+        See all resources
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How we work</span>
+        <h2>Problem → research → build → improve</h2>
+        <p>Our approach focuses on problems rather than technology for its own sake.</p>
+      </div>
+
+      <div class="process-grid process-grid-6">
+        <div class="process-step">
+          <span class="step-mark">1</span>
+          <h3>Problem</h3>
+          <p>Find something worth solving.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">2</span>
+          <h3>Research</h3>
+          <p>Understand what's been tried and why it hasn't stuck.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">3</span>
+          <h3>Experiment</h3>
+          <p>Test small ideas before committing to one.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">4</span>
+          <h3>Prototype</h3>
+          <p>Build the smallest version that proves it out.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">5</span>
+          <h3>Build</h3>
+          <p>Ship in public, repo visible from day one.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-mark">6</span>
+          <h3>Improve</h3>
+          <p>Learn from what fails. Improve what works.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="peak-rule" id="peakRule3" aria-hidden="true"></div>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Common questions</span>
+        <h2>FAQ</h2>
+        <p>The things people usually ask before reaching out.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>
+            <span>Is everything here actually free?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>Yes. Every project and resource we publish is free to use, and the code is open so you can inspect, fork, or build on it. We're not selling access — the goal is for it to be picked up and used.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Can I suggest a problem for you to work on?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>Please do — that's exactly how most of these projects start. Use the "Submit a problem" link in Resources, or just email us directly. We read everything, even if we can't take on every idea right away.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Can I contribute to a project?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>Everything lives in the open on GitHub. Check the Contributor Playbook in Resources for how we plan and ship, then open an issue or pull request on the project you're interested in.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Who's actually behind Link with iQ?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>Link with iQ is owned and maintained by Ajit (<a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">asrbmy</a>). See the About section below for more.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Do you take on paid client work?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>Not the focus right now — this is a research and development organization, not an agency. If that changes we'll say so here. In the meantime, get in touch and we'll point you in the right direction either way.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT / FOUNDER ================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Who's behind it</span>
+        <h2>About Link with iQ</h2>
+        <p>Link with iQ is an independent research and development organization founded and maintained by Ajit, building in the open under the handle <strong>ASRBMY</strong>.</p>
+      </div>
+
+      <div class="founder">
+        <div class="founder-avatar" aria-hidden="true">AJ</div>
+        <div>
+          <h3>Ajit (ASRBMY)</h3>
+          <span class="role">Founder — Link with iQ</span>
+          <p>Ajit founded Link with iQ to bring together research, software development, experimentation, and open technology — turning ideas into practical tools that respect people's privacy and are built to be understood, not just used.</p>
+          <div class="founder-links">
+            <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">asrbmy.github.io</a>
+            <a href="https://github.com/asrbmy" target="_blank" rel="noopener noreferrer">GitHub — @asrbmy</a>
+            <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="section-teaser-link">
+        Read the full story
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Let's build something</span>
+      <h2>Got a real problem worth solving?</h2>
+      <p>Whether it's an idea, a project you want help shipping, or a resource you wish existed — tell us about it. We read everything.</p>
+      <div class="hero-actions">
+        <a href="mailto:hello@linkwithiq.dev" class="btn btn-primary">
+          Email the team
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
+        </a>
+        <a href="https://github.com/linkwithiq" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Browse the GitHub</a>
+        <button class="btn btn-ghost copy-email-btn" id="copyEmailBtn" type="button" data-email="hello@linkwithiq.dev" aria-label="Copy email address">
+          <span class="copy-label">hello@linkwithiq.dev</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="8" height="8" rx="1"/><path d="M2 9.5V2.5A1 1 0 0 1 3 1.5H9.5"/></svg>
+        </button>
+      </div>
+
+      <form class="newsletter-form" id="newsletterForm" novalidate>
+        <label for="newsletterEmail" class="newsletter-label">Or get an email when we ship something new</label>
+        <div class="newsletter-row">
+          <input type="email" id="newsletterEmail" name="email" placeholder="you@example.com" required autocomplete="email">
+          <button type="submit" class="btn btn-primary">Notify me</button>
+        </div>
+        <p class="newsletter-note" id="newsletterNote" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg class="footer-svg-mark" viewBox="0 0 240 265" role="img" aria-label="Link with iQ mark">
+          <path d="M 69.01 29.35 L 64.86 33.69 L 12.23 173.96 L 74.54 65.48 L 99.79 110.28 L 42.28 211.01 L 40.99 218.02 L 42.83 222.53 L 50.11 227.14 L 182.28 225.85 L 186.98 220.23 L 186.98 212.67 L 128.55 110.28 L 153.80 65.48 L 216.10 173.96 L 162.74 31.94 L 153.61 28.06 L 144.77 32.03 L 114.17 84.93 L 83.57 32.03 L 76.47 28.25 Z M 114.08 135.07 L 152.69 202.81 L 75.46 202.63 Z" fill="currentColor" fill-rule="evenodd"/>
+          <path d="M 96.93 13.32 L 94.44 14.79 L 91.68 18.57 L 91.13 22.53 L 91.96 25.76 L 106.79 55.71 L 109.38 58.11 L 112.51 59.31 L 115.92 59.31 L 118.68 58.29 L 120.44 56.91 L 122.37 54.33 L 136.38 25.76 L 137.21 22.81 L 136.66 18.48 L 135.46 16.45 L 133.52 14.52 L 129.28 12.86 L 98.78 12.86 Z" fill="currentColor"/>
+        </svg>
+        <span class="footer-wordmark">Link with <em>iQ</em></span>
+        <p>An independent research and development organization building practical, private, and open technology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="resources.html">Resources</a>
+        <a href="index.html#process">How we work</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Read</h4>
+        <a href="blog.html">Blog</a>
+        <a href="research.html">Research</a>
+        <a href="news.html">News</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="policy.html">Policy</a>
+        <a href="terms.html">Terms &amp; Privacy</a>
+        <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@linkwithiq.dev">Email</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">Ajit (asrbmy)</a></span>
+      <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
