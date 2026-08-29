@@ -306,6 +306,120 @@ if (document.querySelector('[data-repo]')) {
   loadProjectStats();
 }
 
+// ---- good first issue feed (community.html) ----
+async function loadGoodFirstIssues() {
+  const list = document.getElementById('goodFirstIssues');
+  const fallback = document.getElementById('goodFirstIssuesFallback');
+  if (!list) return;
+  const org = list.dataset.org;
+  if (!org) return;
+  try {
+    const q = encodeURIComponent(`org:${org} label:"good first issue" state:open type:issue`);
+    const res = await fetch(`https://api.github.com/search/issues?q=${q}&per_page=10`, {
+      headers: { Accept: 'application/vnd.github+json' }
+    });
+    if (!res.ok) throw new Error('request failed');
+    const data = await res.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+    if (items.length === 0) {
+      if (fallback) fallback.hidden = false;
+      return;
+    }
+    items.forEach(issue => {
+      const li = document.createElement('li');
+      li.className = 'issue-row';
+
+      const link = document.createElement('a');
+      link.href = issue.html_url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.className = 'issue-title';
+      link.textContent = issue.title;
+
+      const meta = document.createElement('span');
+      meta.className = 'issue-meta';
+      const repoName = issue.repository_url ? issue.repository_url.split('/').pop() : '';
+      meta.textContent = `${repoName} · #${issue.number}`;
+
+      li.appendChild(link);
+      li.appendChild(meta);
+      list.appendChild(li);
+    });
+  } catch (err) {
+    // couldn't load live data — say so honestly, never claim "nothing's open"
+    // when we simply failed to check
+    if (fallback) {
+      fallback.textContent = '';
+      fallback.appendChild(document.createTextNode("Couldn't load live issues right now — "));
+      const link = document.createElement('a');
+      link.href = 'https://github.com/linkwithiq';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'browse repositories on GitHub';
+      fallback.appendChild(link);
+      fallback.appendChild(document.createTextNode(' directly.'));
+      fallback.hidden = false;
+    }
+  }
+}
+
+// ---- contributor avatars (community.html, project.html) ----
+async function loadContributorAvatars() {
+  const container = document.getElementById('contributorAvatars');
+  const fallback = document.getElementById('contributorFallback');
+  if (!container) return;
+  const repos = (container.dataset.repos || '').split(',').map(r => r.trim()).filter(Boolean);
+  if (repos.length === 0) return; // no repo(s) specified yet — nothing to fetch
+  try {
+    const results = await Promise.all(repos.map(repo =>
+      fetch(`https://api.github.com/repos/${repo}/contributors?per_page=30`, {
+        headers: { Accept: 'application/vnd.github+json' }
+      }).then(res => (res.ok ? res.json() : []))
+    ));
+    const seen = new Map();
+    results.flat().forEach(c => {
+      if (c && c.login && !seen.has(c.login)) seen.set(c.login, c);
+    });
+    const contributors = Array.from(seen.values());
+    if (contributors.length === 0) {
+      if (fallback) fallback.hidden = false;
+      return;
+    }
+    contributors.forEach(c => {
+      const a = document.createElement('a');
+      a.href = c.html_url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'contributor-avatar-link';
+      a.title = c.login;
+      const img = document.createElement('img');
+      img.src = c.avatar_url;
+      img.alt = c.login;
+      img.width = 40;
+      img.height = 40;
+      img.loading = 'lazy';
+      a.appendChild(img);
+      container.appendChild(a);
+    });
+  } catch (err) {
+    if (fallback) {
+      fallback.textContent = '';
+      fallback.appendChild(document.createTextNode("Couldn't load contributor data right now — check "));
+      const link = document.createElement('a');
+      link.href = 'https://github.com/linkwithiq';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'the repositories on GitHub';
+      fallback.appendChild(link);
+      fallback.appendChild(document.createTextNode(' directly.'));
+      fallback.hidden = false;
+    }
+  }
+}
+
+if (document.getElementById('goodFirstIssues')) loadGoodFirstIssues();
+if (document.getElementById('contributorAvatars')) loadContributorAvatars();
+
 if (!PREFERS_REDUCED_MOTION && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
     '.mission-card, .project-card, .resource-row, .process-step, .founder, .faq-item'
