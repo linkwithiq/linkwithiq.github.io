@@ -255,7 +255,7 @@ if (newsletterForm) {
     }
     const subject = encodeURIComponent('Add me to Link with iQ updates');
     const body = encodeURIComponent(`Please add ${email} to the updates list.`);
-    window.location.href = `mailto:hello@linkwithiq.dev?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:linkwithiq@proton.me?subject=${subject}&body=${body}`;
     newsletterForm.reset();
   });
 }
