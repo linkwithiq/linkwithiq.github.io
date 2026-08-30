@@ -334,6 +334,22 @@ body.is-loading{overflow:hidden;}
   max-width:52ch;
   margin-bottom:var(--space-5);
 }
+.rss-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--cream-dim);
+  text-decoration:none;
+  border:1px solid var(--hair-strong);
+  border-radius:100px;
+  padding:7px 14px;
+  margin-top:-8px;
+  margin-bottom:var(--space-5);
+  transition:color .15s ease, border-color .15s ease;
+}
+.rss-link:hover{color:var(--rust); border-color:var(--rust-deep);}
 .hero-actions{
   display:flex;
   gap:var(--space-3);

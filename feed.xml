@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Link with iQ — Blog &amp; News</title>
+    <link>https://linkwithiq.github.io/</link>
+    <atom:link href="https://linkwithiq.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Notes on what we're building and why, plus announcements and milestones from Link with iQ.</description>
+    <language>en-us</language>
+    <generator>Hand-written, no build step</generator>
+
+    <item>
+      <title>linkwithiq.github.io launched</title>
+      <link>https://linkwithiq.github.io/blog/why-open-by-default.html</link>
+      <guid isPermaLink="false">news-linkwithiq-launched</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>launch</category>
+      <description>The Link with iQ site went live, bringing together our projects, resources, and writing in one place for the first time.</description>
+    </item>
+
+    <item>
+      <title>Why everything we build starts open</title>
+      <link>https://linkwithiq.github.io/blog/why-open-by-default.html</link>
+      <guid isPermaLink="true">https://linkwithiq.github.io/blog/why-open-by-default.html</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>philosophy</category>
+      <description>The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.</description>
+    </item>
+
+    <item>
+      <title>How we scoped Community Toolkit down to something shippable</title>
+      <link>https://linkwithiq.github.io/blog/scoping-community-toolkit.html</link>
+      <guid isPermaLink="true">https://linkwithiq.github.io/blog/scoping-community-toolkit.html</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>process</category>
+      <description>The feature list we cut, the one we kept, and why "smaller than feels responsible" was the right call.</description>
+    </item>
+  </channel>
+</rss>
