@@ -3,18 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  // Applied synchronously, before first paint, to avoid a flash of the
-  // wrong theme. The real toggle logic (persisting changes, updating the
-  // button) lives in script.js and runs later.
-  (function () {
-    try {
-      var saved = localStorage.getItem('liq-theme');
-      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
-    } catch (e) { /* localStorage may be unavailable — default dark theme is fine */ }
-  })();
-</script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Research — Link with iQ</title>
@@ -84,10 +72,6 @@
       <a href="resources.html">Resources</a>
       <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="3.2"/><path d="M8 1v1.6M8 13.4V15M15 8h-1.6M2.6 8H1M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1M12.7 12.7l-1.1-1.1M4.4 4.4L3.3 3.3"/></svg>
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9.2A6 6 0 1 1 6.8 2 4.7 4.7 0 0 0 14 9.2Z"/></svg>
-      </button>
       <a href="index.html#contact" class="cta-link">Get in touch</a>
     </nav>
 
@@ -182,7 +166,7 @@
         <a href="policy.html">Policy</a>
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="mailto:hello@linkwithiq.dev">Email</a>
+        <a href="mailto:linkwithiq@proton.me">Email</a>
       </div>
     </div>
 
