@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<title>Now — Link with iQ</title>
-<meta name="description" content="What Ajit is currently working on at Link with iQ — a dated, honestly-out-of-date-eventually now page.">
+<title>Uses — Link with iQ</title>
+<meta name="description" content="What this site is built with — stack, design tokens, hosting, and what's deliberately not here.">
 
 <link rel="icon" type="image/svg+xml" href="assets/svg/logo-mark-rust.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/favicon-192.png">
 
-<meta property="og:title" content="Now — Link with iQ">
-<meta property="og:description" content="What Ajit is currently working on at Link with iQ.">
+<meta property="og:title" content="Uses — Link with iQ">
+<meta property="og:description" content="What this site is built with — stack, design tokens, hosting, and what's deliberately not here.">
 <meta property="og:image" content="assets/logo-mark-900.png">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://linkwithiq.github.io/now.html">
+<meta property="og:url" content="https://linkwithiq.github.io/uses.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Now — Link with iQ">
-<meta name="twitter:description" content="What Ajit is currently working on at Link with iQ.">
+<meta name="twitter:title" content="Uses — Link with iQ">
+<meta name="twitter:description" content="What this site is built with — stack, design tokens, hosting, and what's deliberately not here.">
 <meta name="twitter:image" content="assets/logo-mark-900.png">
 
-<link rel="canonical" href="https://linkwithiq.github.io/now.html">
+<link rel="canonical" href="https://linkwithiq.github.io/uses.html">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
@@ -85,19 +85,9 @@
   <section class="hero" style="padding-bottom:var(--space-6);">
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="eyebrow">What's true today</span>
-      <h1 style="margin-top:var(--space-3);">Now</h1>
-      <p class="lede">
-        <!-- PLACEHOLDER — replace with a real one-line framing if you want one.
-             The convention (see nownownow.com) is: a dated snapshot of what
-             you're actually spending time on, updated periodically, left
-             honestly stale between updates rather than kept evergreen. -->
-        A snapshot of what I'm actually spending time on at Link with iQ right now — not a roadmap, not a mission statement, just what's true today.
-      </p>
-      <p class="legal-updated" style="margin-top:var(--space-3);">
-        <!-- PLACEHOLDER — update this date every time you edit the page below -->
-        Last updated: [MONTH YEAR — e.g. August 2026]
-      </p>
+      <span class="eyebrow">Colophon</span>
+      <h1 style="margin-top:var(--space-3);">Uses</h1>
+      <p class="lede">What this site is actually built with, and what it deliberately isn't. No build step to hide behind — this is the whole stack.</p>
     </div>
   </section>
 
@@ -105,27 +95,23 @@
     <div class="wrap">
       <div class="legal-body">
 
-        <h2>Building</h2>
-        <!-- PLACEHOLDER — 1–3 sentences, or a short list, on what's actively
-             getting your hands-on-keyboard time right now. Keep it to what's
-             true this week/month, not the whole roadmap (that lives on the
-             Changelog page). -->
-        <p>[Replace with what you're actively building right now — e.g. a specific feature, a specific repo, a specific bug you're chasing.]</p>
+        <h2>Stack</h2>
+        <p>Plain HTML, CSS, and JavaScript — no framework, no bundler, no build step. Every <code>.html</code> file is a complete, independent document sharing one stylesheet (<code>styles.css</code>) and one script (<code>script.js</code>). Locally it runs on nothing fancier than <code>python3 -m http.server</code>.</p>
 
-        <h2>Thinking about</h2>
-        <!-- PLACEHOLDER — questions you're chewing on, research you're doing,
-             decisions you haven't made yet. This is the section that makes a
-             Now page feel human rather than like a second changelog. -->
-        <p>[Replace with a problem, question, or idea you're currently turning over — doesn't need to be resolved yet.]</p>
+        <h2>Hosting</h2>
+        <p>GitHub Pages, serving static files directly from the repo. No server-side backend, no database — which is also why the <a href="terms.html#privacy" style="color:var(--link);">privacy policy</a> can honestly say there's no server-side data collection: there's no server to collect anything.</p>
 
-        <h2>Not doing right now</h2>
-        <!-- PLACEHOLDER — optional but useful: explicitly naming what's
-             paused or deprioritized sets honest expectations, especially for
-             anyone who filed an issue or suggested something. -->
-        <p>[Optional: name anything you've deliberately paused or deprioritized, so people aren't left guessing. Delete this section if it doesn't apply right now.]</p>
+        <h2>Design</h2>
+        <p>Every color, spacing, and type value is a CSS custom property in <code>styles.css</code> — <code>--ink</code>, <code>--cream</code>, <code>--rust</code>, <code>--signal</code>, and the spacing/radius scale, so the whole look can be retuned from one place. Type is <strong>Oswald</strong> for headings, <strong>Inter</strong> for body text, and <strong>JetBrains Mono</strong> for labels and code, loaded from Google Fonts. The logo mark exists as hand-traced SVG paths in four color variants rather than a raster export, so it stays crisp at any size and can recolor with <code>currentColor</code>.</p>
 
-        <h2>Where this fits</h2>
-        <p>This page follows the <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer" style="color:var(--link);">/now page</a> convention — a periodically-updated, honestly-dated account of current focus, distinct from the <a href="changelog.html" style="color:var(--link);">Changelog</a> (what's shipped) and the roadmap on that same page (what's planned). It's meant to go stale between updates rather than be kept artificially fresh — if the date above looks old, that's accurate, not neglect.</p>
+        <h2>Live data</h2>
+        <p>Where the site shows real-time information — star counts and last-updated dates on project cards, the good-first-issue feed, and contributor avatars on the <a href="community.html" style="color:var(--link);">Community</a> page — it's fetched directly from the browser to the public GitHub API. Nothing is proxied or logged on this end; see the <a href="terms.html#privacy" style="color:var(--link);">Privacy Policy</a> for exactly what that means.</p>
+
+        <h2>What's deliberately not here</h2>
+        <p>No analytics or tracking scripts of any kind. No cookies. No client-side framework (React, Vue, or otherwise). No CMS. No advertising. No third-party embeds beyond Google Fonts and the GitHub API calls described above. This isn't a placeholder list to fill in later — it's the current, accurate state of the stack, and it'll be updated here the day any of it changes.</p>
+
+        <h2>Full detail</h2>
+        <p>The complete technical writeup — deploy steps, known bugs and their fixes, the full design token list — lives in the repository's <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer" style="color:var(--link);">README on GitHub</a>.</p>
 
       </div>
     </div>
@@ -133,12 +119,12 @@
 
   <section class="cta-band">
     <div class="wrap">
-      <span class="eyebrow">Something here resonate?</span>
-      <h2>Say hello</h2>
-      <p>If what's above overlaps with something you're working on or thinking about too, I'd like to hear about it.</p>
+      <span class="eyebrow">Building something similar?</span>
+      <h2>Fork the starter</h2>
+      <p>The zero-build-step template this site is based on is open and free to use.</p>
       <div class="hero-actions">
-        <a href="index.html#contact" class="btn btn-primary">
-          Get in touch
+        <a href="https://github.com/linkwithiq/portfolio-starter" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          View on GitHub
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
         </a>
       </div>

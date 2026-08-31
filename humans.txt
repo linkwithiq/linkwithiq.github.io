@@ -1,0 +1,17 @@
+/* TEAM */
+    Founder & maintainer: Ajit (asrbmy)
+    Site: https://asrbmy.github.io
+    GitHub: https://github.com/asrbmy
+    Contact: linkwithiq@proton.me
+
+/* THANKS */
+    Everyone who files an issue, opens a PR, or points out something
+    that's broken, missing, or just wrong. See community.html.
+
+/* SITE */
+    Last update: 2026/08
+    Standards: HTML5, CSS3, WCAG 2.1 AA (target — see policy.html)
+    Components: Hand-traced SVG logo marks, no icon library
+    Software: No framework, no build step, no bundler — plain HTML/CSS/JS,
+              deployed straight to GitHub Pages
+    Fonts: Google Fonts (Oswald, Inter, JetBrains Mono)

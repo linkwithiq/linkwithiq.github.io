@@ -1,0 +1,10 @@
+# Link with iQ — security contact
+# This is a small, independently-run static site (see terms.html for what
+# that means in practice: no backend, no accounts, no stored user data).
+# If you've found something that looks like a real security issue, I'd
+# genuinely like to know about it before it's public anywhere else.
+
+Contact: mailto:linkwithiq@proton.me
+Expires: 2027-08-31T11:18:06.000Z
+Preferred-Languages: en
+Canonical: https://linkwithiq.github.io/.well-known/security.txt
