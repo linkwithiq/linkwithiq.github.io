@@ -90,3 +90,10 @@ CSS custom properties in `styles.css` (`:root`):
 - `--on-accent` — always-dark text color for anything sitting on top of an accent-colored surface (e.g. button labels), decoupled from the page background token
 - `--signal` / `--signal-br` — secondary green accent (status indicators)
 - `--hair` / `--hair-strong` — border/divider opacity levels
+
+## License
+
+The code in this repository — HTML, CSS, JS, and the site's own SVG logo marks — is licensed under [MIT](LICENSE).
+
+Written content (blog posts, research notes, page copy) is **not** covered by that MIT grant and follows the narrower terms in [`terms.html`](terms.html#licensing) instead: quoting with attribution and a link back is welcome, wholesale republishing as your own isn't.
+
