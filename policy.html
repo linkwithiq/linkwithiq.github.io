@@ -27,6 +27,9 @@
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="is-loading">
@@ -93,8 +96,19 @@
 
   <section>
     <div class="wrap">
+      <div class="legal-toc">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#open-source-licensing">Open source licensing</a></li>
+          <li><a href="#use-of-ai-in-our-work">Use of AI in our work</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#data-minimalism">Data minimalism</a></li>
+          <li><a href="#how-this-page-changes">How this page changes</a></li>
+        </ol>
+      </div>
+
       <div class="legal-body">
-        <h2>Open source licensing</h2>
+        <h2 id="open-source-licensing">Open source licensing</h2>
         <p>Every project we publish carries an explicit open source license (typically MIT) from its first commit. We don't run a "source available, but not really open" model, and we don't plan to relicense a project to close it off after people have started depending on it. If a project's license ever needs to change, we'll explain why, publicly, before it happens. This site's own code follows the same rule — see its <a href="https://github.com/linkwithiq/linkwithiq.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color:var(--link);">LICENSE</a>.</p>
 
         <h2 id="use-of-ai-in-our-work">Use of AI in our work</h2>
@@ -105,13 +119,13 @@
           <li>We don't train AI models on data submitted through our projects (contact forms, issue reports, etc.) without saying so explicitly first.</li>
         </ul>
 
-        <h2>Accessibility</h2>
+        <h2 id="accessibility">Accessibility</h2>
         <p>We aim for our own site and projects to meet WCAG 2.1 AA as a baseline — keyboard navigable, screen-reader friendly, sufficient color contrast, visible focus states. We won't always get this perfectly right on the first try, especially on newer, less-tested projects, but we treat accessibility bugs as real bugs, not optional polish, and we welcome reports when we miss something.</p>
 
-        <h2>Data minimalism</h2>
+        <h2 id="data-minimalism">Data minimalism</h2>
         <p>We collect the minimum data we need to do what we say we're doing, and we default to not collecting things we don't have an immediate use for. See the <a href="terms.html#privacy" style="color:var(--link);">Privacy Policy</a> for the specifics of what that means on this site today.</p>
 
-        <h2>How this page changes</h2>
+        <h2 id="how-this-page-changes">How this page changes</h2>
         <p>As Link with iQ grows past being mostly one person, these positions may need more structure behind them (an actual accessibility audit process, a formal AI-use policy document, etc.). We'll update this page as that happens rather than let it drift out of date.</p>
       </div>
     </div>

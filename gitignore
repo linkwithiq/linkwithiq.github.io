@@ -1,0 +1,14 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local server logs, if any
+*.log
+
+# No node_modules/dist here on purpose — this site has no build step
+# (see README.md), so nothing gets generated or installed locally.

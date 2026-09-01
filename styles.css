@@ -8,7 +8,11 @@
    (labels / eyebrows / nav — engineering register), Inter (body)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+/* Font loading moved to a real <link> in <head> on every page (see below) —
+   @import here would block CSSOM construction until this whole file has
+   already been fetched and parsed, discovering the font request far later
+   than necessary. A <head> link + preconnect lets the browser start the
+   font fetch in parallel with everything else. */
 
 :root{
   --ink:        #1a1108;
