@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Link with iQ — Blog &amp; News</title>
+    <title>Link with iQ — Updates</title>
     <link>https://linkwithiq.github.io/</link>
     <atom:link href="https://linkwithiq.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Notes on what we're building and why, plus announcements and milestones from Link with iQ.</description>
+    <description>Blog posts, research notes, news, and changelog entries from Link with iQ.</description>
     <language>en-us</language>
     <generator>Hand-written, no build step</generator>
 
@@ -33,6 +33,33 @@
       <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
       <category>process</category>
       <description>The feature list we cut, the one we kept, and why "smaller than feels responsible" was the right call.</description>
+    </item>
+
+    <item>
+      <title>What we found scoping civic issue-reporting tools</title>
+      <link>https://linkwithiq.github.io/research/civic-reporting-landscape.html</link>
+      <guid isPermaLink="true">https://linkwithiq.github.io/research/civic-reporting-landscape.html</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>civic tech</category>
+      <description>A survey of how residents currently report infrastructure problems, and where the gaps actually are before we write a line of Report It.</description>
+    </item>
+
+    <item>
+      <title>Shipped: site-wide Blog, Research, News, Policy, Community, and Terms pages</title>
+      <link>https://linkwithiq.github.io/changelog.html#log</link>
+      <guid isPermaLink="false">changelog-sitewide-pages-aug2026</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>changelog</category>
+      <description>Expanded the site from a single homepage into a full set of pages, plus live GitHub-powered project stats, contributor avatars, and a good-first-issue feed.</description>
+    </item>
+
+    <item>
+      <title>Shipped: logo redrawn as vector, loading animation added</title>
+      <link>https://linkwithiq.github.io/changelog.html#log</link>
+      <guid isPermaLink="false">changelog-logo-vector-aug2026</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>changelog</category>
+      <description>Replaced the raster logo with a hand-traced SVG version, and added a draw-in loading animation on first visit.</description>
     </item>
   </channel>
 </rss>

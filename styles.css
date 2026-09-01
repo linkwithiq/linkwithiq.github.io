@@ -1238,3 +1238,39 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .back-to-top{bottom:16px; right:16px; width:40px; height:40px;}
 }
 
+/* ---------- print (legal pages: terms.html, policy.html) ----------
+   Strips chrome that doesn't belong on paper/PDF — nav, footer, buttons,
+   the loading screen, decorative backgrounds — and resets colors to plain
+   black-on-white so it doesn't waste ink or fight a screen-reader-style
+   dark background. Scoped broadly (applies whenever printing any page,
+   not just legal ones) since none of this chrome is useful on paper
+   anywhere on the site. */
+@media print{
+  .site-header, .nav-toggle, .scroll-progress, .back-to-top,
+  .loading-screen, .hero-grid, .cta-band, footer, .skip-link{
+    display:none !important;
+  }
+  body, .wrap{
+    background:#fff !important;
+    color:#111 !important;
+    max-width:100% !important;
+  }
+  .legal-body, .legal-toc{
+    color:#111 !important;
+  }
+  .legal-body h2{
+    color:#111 !important;
+    page-break-after:avoid;
+  }
+  .legal-body a, .legal-toc a{
+    color:#111 !important;
+    text-decoration:underline;
+  }
+  .legal-body p, .legal-body li{
+    orphans:3;
+    widows:3;
+  }
+  .hero{padding:var(--space-4) 0 !important;}
+  .hero .lede, .hero h1, .eyebrow{color:#111 !important;}
+}
+

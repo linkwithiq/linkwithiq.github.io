@@ -1,0 +1,24 @@
+# Link with iQ
+
+> An independent research and development organization founded by Ajit (asrbmy), building practical, private, and open technology. Solo-maintained, static site, no backend.
+
+Link with iQ researches, builds, and shares open-source software, tools, and resources — prioritizing privacy, accessibility, simplicity, and openness. Most projects are early-stage; content is written to be honest about that (no fabricated user counts, testimonials, or press coverage — see /policy.html).
+
+## Key pages
+
+- [Home](https://linkwithiq.github.io/): Mission, current projects, and how to get in touch
+- [About](https://linkwithiq.github.io/about.html): Founder, principles, and full mission
+- [Now](https://linkwithiq.github.io/now.html): What's actively being worked on, dated
+- [Uses](https://linkwithiq.github.io/uses.html): The actual tech stack this site runs on
+- [Policy](https://linkwithiq.github.io/policy.html): Positions on licensing, AI use, and accessibility
+- [Terms & Privacy](https://linkwithiq.github.io/terms.html): What data this site does and doesn't collect
+- [Blog](https://linkwithiq.github.io/blog.html): Notes on what's being built and why
+- [Research](https://linkwithiq.github.io/research.html): Problem-scoping notes written before projects start
+- [Changelog](https://linkwithiq.github.io/changelog.html): What's shipped, in reverse-chronological order
+- [Community](https://linkwithiq.github.io/community.html): How to contribute, open issues, contributors
+
+## Notes for AI agents
+
+- This file is informational, not an access-control mechanism — see /robots.txt for crawl directives.
+- Project status badges (Live / In progress / Concept) on the homepage reflect actual current state, not aspiration.
+- Live data (star counts, contributors, open issues) shown on some pages is fetched client-side from the GitHub API at request time and may not appear in a static crawl/fetch of the HTML.
