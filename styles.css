@@ -23,17 +23,17 @@
   --rust:       #f0823a;
   --rust-deep:  #b84915;
   --signal:     #2d7a45;
-  --signal-br:  #43a866;
+  --signal-br:  #6ebc89;
   --hair:       rgba(244,235,215,0.14);
   --hair-strong:rgba(244,235,215,0.28);
 
   /* text sitting on top of a rust-colored surface (buttons, active pills) —
      always dark, independent of theme, since rust needs dark text either way */
   --on-accent:  #170f08;
-  /* rust used specifically for small text/icons — swapped to a darker,
-     higher-contrast shade in light mode; --rust itself stays the vivid
-     brand orange for backgrounds/borders/large graphic fills */
-  --link:       var(--rust);
+  /* rust used specifically for small text/icons — a lighter shade that
+     reaches 7:1 (WCAG AAA) on every ink surface; --rust itself stays the
+     vivid brand orange for backgrounds/borders/large graphic fills */
+  --link:       #f29659;
 
   --display: 'Oswald', 'Arial Narrow', sans-serif;
   --mono:    'JetBrains Mono', ui-monospace, monospace;
@@ -54,6 +54,16 @@
 *{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
 #mission, #projects, #resources, #process, #faq, #about, #contact{
+  scroll-margin-top:92px;
+}
+/* WCAG 2.2 §2.4.11 (Focus Not Obscured): the rule above only covered 7
+   hand-picked homepage sections, but every page has grown real anchor
+   targets since (TOC links on policy.html/terms.html, #log, #roadmap,
+   #good-first-issues, etc.) that would land directly under the sticky
+   header without this. Applying it to every element with an id, rather
+   than maintaining a manual list, means new sections can't silently slip
+   through this again. */
+[id]{
   scroll-margin-top:92px;
 }
 @media (prefers-reduced-motion: reduce){
@@ -1278,3 +1288,23 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .hero .lede, .hero h1, .eyebrow{color:#111 !important;}
 }
 
+/* ---------- forced-colors (Windows High Contrast Mode) ----------
+   .btn-primary and the nav's .cta-link are solid-background buttons with
+   no border of their own — forced-colors mode strips custom background
+   colors, and without a border these would lose their button shape
+   entirely and become invisible/indeterminate against the page. Adding
+   an explicit border (using the ButtonText system color keyword) only
+   when forced-colors is actually active costs nothing for everyone else;
+   the rest of the site's buttons/pills already have a real border
+   property so they're unaffected by this gap. */
+@media (forced-colors: active){
+  .btn-primary, .nav-links a.cta-link{
+    border:1px solid ButtonText;
+  }
+}
+
+
+/* ---- target size: 44x44 minimum for primary controls (WCAG 2.5.5, AAA) ---- */
+.btn,.filter-tab,.nav-toggle,.nav-close,.back-to-top,.rss-link,.nav-links a.cta-link{min-height:44px; min-width:44px;}
+.btn,.filter-tab,.rss-link{display:inline-flex; align-items:center; justify-content:center;}
+@media (max-width:900px){.back-to-top{width:44px; height:44px;}}
