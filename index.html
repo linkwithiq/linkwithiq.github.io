@@ -25,6 +25,7 @@
 
 <link rel="canonical" href="https://linkwithiq.github.io/">
 <link rel="alternate" type="application/rss+xml" title="Link with iQ — Updates" href="feed.xml">
+<link rel="alternate" type="application/feed+json" title="Link with iQ — Updates (JSON Feed)" href="feed.json">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
@@ -92,6 +93,30 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Not the focus right now — this is a research and development organization, not an agency. If that changes we'll say so here. In the meantime, get in touch and we'll point you in the right direction either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this site track me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There are no cookies, no analytics, and no tracking scripts. Some pages fetch public numbers from the GitHub API in your browser, and that is the only outside request. Fonts are served from this site. The full detail is in the Terms & Privacy page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accessible is the site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We aim for WCAG 2.2 Level AA and test every page automatically and by hand. We don't claim Level AAA, and we haven't had an external audit. Our accessibility statement explains what we've checked and how to report a barrier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contribute?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Community page lists beginner-friendly issues pulled live from GitHub, and CONTRIBUTING.md in the repository explains how we work. Small fixes are welcome."
       }
     }
   ]
@@ -482,6 +507,27 @@
           </summary>
           <p>Not the focus right now — this is a research and development organization, not an agency. If that changes we'll say so here. In the meantime, get in touch and we'll point you in the right direction either way.</p>
         </details>
+        <details class="faq-item">
+          <summary>
+            <span>Does this site track me?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>No. There are no cookies, no analytics, and no tracking scripts. Some pages fetch public numbers from the GitHub API in your browser, and that is the only outside request. Fonts are served from this site. The full detail is in the Terms &amp; Privacy page. <a href="terms.html#privacy" style="color:var(--link);">Read more</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>How accessible is the site?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>We aim for WCAG 2.2 Level AA and test every page automatically and by hand. We don't claim Level AAA, and we haven't had an external audit. Our accessibility statement explains what we've checked and how to report a barrier. <a href="accessibility.html" style="color:var(--link);">Read more</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>How can I contribute?</span>
+            <svg class="chev" viewBox="0 0 14 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l6 6 6-6"/></svg>
+          </summary>
+          <p>The Community page lists beginner-friendly issues pulled live from GitHub, and CONTRIBUTING.md in the repository explains how we work. Small fixes are welcome. <a href="community.html" style="color:var(--link);">Read more</a>.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -530,7 +576,7 @@
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
         </a>
         <a href="https://github.com/linkwithiq" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Browse the GitHub</a>
-        <button class="btn btn-ghost copy-email-btn" id="copyEmailBtn" type="button" data-email="linkwithiq@proton.me" aria-label="Copy email address">
+        <button class="btn btn-ghost copy-email-btn" id="copyEmailBtn" type="button" data-email="linkwithiq@proton.me" aria-label="Copy email address linkwithiq@proton.me">
           <span class="copy-label">linkwithiq@proton.me</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="8" height="8" rx="1"/><path d="M2 9.5V2.5A1 1 0 0 1 3 1.5H9.5"/></svg>
         </button>
@@ -584,6 +630,7 @@
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:linkwithiq@proton.me">Email</a>
+        <a href="mailto:linkwithiq@proton.me?subject=Problem%20with%20a%20page" class="report-link">Report a problem</a>
       </div>
     </div>
 

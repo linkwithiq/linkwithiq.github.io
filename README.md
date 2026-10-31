@@ -101,3 +101,10 @@ The code in this repository — HTML, CSS, JS, and the site's own SVG logo marks
 
 Written content (blog posts, research notes, page copy) is **not** covered by that MIT grant and follows the narrower terms in [`terms.html`](terms.html#licensing) instead: quoting with attribution and a link back is welcome, wholesale republishing as your own isn't.
 
+
+## Checks
+
+- `python3 scripts/check_site.py`: internal links and anchors, sitemap freshness, XML/JSON/JSON-LD validity, weight budget.
+- `node scripts/a11y_check.js` (needs `npm i playwright axe-core`): axe-core accessibility test of every page at desktop and phone width.
+- `scripts/pre-commit`: optional git hook that runs the first check before each commit.
+- CI runs both on every push, plus a weekly external link check.

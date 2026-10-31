@@ -1,0 +1,3 @@
+#!/bin/sh
+# Optional local hook. Install with:  cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+python3 scripts/check_site.py || { echo "Site check failed: commit aborted."; exit 1; }

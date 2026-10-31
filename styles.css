@@ -1331,3 +1331,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .swatch-chip{flex:0 0 48px; width:48px; height:48px; border-radius:4px; border:1px solid var(--hair-strong);}
 .swatch-ratio{font-family:var(--mono); font-size:12px;}
 .nav-links a.cta-link{display:inline-flex; align-items:center; justify-content:center;}
+
+/* links inside running text must not rely on colour alone (WCAG 1.4.1) */
+p a:not(.btn), li a:not(.btn), .footer-bottom a, .legal-body a{text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;}

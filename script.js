@@ -447,3 +447,9 @@ if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.
     navigator.serviceWorker.register('sw.js').catch(() => { /* offline support is optional */ });
   });
 }
+
+// ---- "Report a problem": fill in which page the visitor was on (nothing is sent anywhere; it only builds the email) ----
+document.querySelectorAll('.report-link').forEach(link => {
+  const body = encodeURIComponent(`Page: ${location.href}\n\nWhat went wrong:\n`);
+  link.href = `mailto:linkwithiq@proton.me?subject=${encodeURIComponent('Problem with ' + document.title)}&body=${body}`;
+});

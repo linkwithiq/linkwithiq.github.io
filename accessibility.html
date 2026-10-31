@@ -110,7 +110,7 @@
         </ul>
 
         <h2 id="testing">How we've tested</h2>
-        <p>Contrast ratios were calculated from the colour values in <code>styles.css</code>. Automated checks run on every change to catch broken links, anchors, and invalid markup. Keyboard behaviour and focus handling were reviewed by hand. We have <strong>not</strong> had an external accessibility audit, and we haven't tested with every screen reader and browser combination, so there may be problems we haven't found.</p>
+        <p>Contrast ratios were calculated from the colour values in <code>styles.css</code>. Automated checks run on every change to catch broken links, anchors, and invalid markup, and an automated accessibility test (axe-core, against WCAG 2.x A and AA rules) loads every page at desktop and phone width. Keyboard behaviour and focus handling were reviewed by hand. We have <strong>not</strong> had an external accessibility audit, and we haven't tested with every screen reader and browser combination, so there may be problems we haven't found.</p>
 
         <h2 id="limits">Known limits</h2>
         <ul>
@@ -122,7 +122,7 @@
         <h2 id="report">Report a barrier</h2>
         <p>If something on this site is hard or impossible for you to use, email <a href="mailto:linkwithiq@proton.me?subject=Accessibility%20barrier" style="color:var(--link);">linkwithiq@proton.me</a> with the page, what you were trying to do, and (if you're comfortable sharing) the browser or assistive technology you use. We're a small team and can't promise a fixed response time, but we read every report and fix what we can. You can also <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer" style="color:var(--link);">open an issue on GitHub</a>.</p>
 
-        <p style="color:var(--cream-dim); font-family:var(--mono); font-size:13px;">Last reviewed: October 2026</p>
+        <p style="color:var(--cream-dim); font-family:var(--mono); font-size:13px;">Last reviewed: October 2026 (the first axe run found unlinked-underline and button-label problems, now fixed)</p>
 
       </div>
     </div>
@@ -179,6 +179,7 @@
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:linkwithiq@proton.me">Email</a>
+        <a href="mailto:linkwithiq@proton.me?subject=Problem%20with%20a%20page" class="report-link">Report a problem</a>
       </div>
     </div>
 

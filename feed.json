@@ -1,0 +1,76 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Link with iQ — Updates",
+  "home_page_url": "https://linkwithiq.github.io/",
+  "feed_url": "https://linkwithiq.github.io/feed.json",
+  "description": "Blog posts, research notes, news, and changelog entries from Link with iQ.",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "Ajit (asrbmy)",
+      "url": "https://asrbmy.github.io"
+    }
+  ],
+  "items": [
+    {
+      "id": "news-linkwithiq-launched",
+      "url": "https://linkwithiq.github.io/news.html",
+      "title": "linkwithiq.github.io launched",
+      "content_text": "The Link with iQ site went live, bringing together our projects, resources, and writing in one place for the first time.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "launch"
+      ]
+    },
+    {
+      "id": "https://linkwithiq.github.io/blog/why-open-by-default.html",
+      "url": "https://linkwithiq.github.io/blog/why-open-by-default.html",
+      "title": "Why everything we build starts open",
+      "content_text": "The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "philosophy"
+      ]
+    },
+    {
+      "id": "https://linkwithiq.github.io/blog/scoping-community-toolkit.html",
+      "url": "https://linkwithiq.github.io/blog/scoping-community-toolkit.html",
+      "title": "How we scoped Community Toolkit down to something shippable",
+      "content_text": "The feature list we cut, the one we kept, and why \"smaller than feels responsible\" was the right call.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "process"
+      ]
+    },
+    {
+      "id": "https://linkwithiq.github.io/research/civic-reporting-landscape.html",
+      "url": "https://linkwithiq.github.io/research/civic-reporting-landscape.html",
+      "title": "What we found scoping civic issue-reporting tools",
+      "content_text": "A survey of how residents currently report infrastructure problems, and where the gaps actually are before we write a line of Report It.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "civic tech"
+      ]
+    },
+    {
+      "id": "changelog-sitewide-pages-aug2026",
+      "url": "https://linkwithiq.github.io/changelog.html#log",
+      "title": "Shipped: site-wide Blog, Research, News, Policy, Community, and Terms pages",
+      "content_text": "Expanded the site from a single homepage into a full set of pages, plus live GitHub-powered project stats, contributor avatars, and a good-first-issue feed.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "changelog"
+      ]
+    },
+    {
+      "id": "changelog-logo-vector-aug2026",
+      "url": "https://linkwithiq.github.io/changelog.html#log",
+      "title": "Shipped: logo redrawn as vector, loading animation added",
+      "content_text": "Replaced the raster logo with a hand-traced SVG version, and added a draw-in loading animation on first visit.",
+      "date_published": "2026-08-01T00:00:00Z",
+      "tags": [
+        "changelog"
+      ]
+    }
+  ]
+}

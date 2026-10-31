@@ -7,8 +7,8 @@
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Page not found — Link with iQ</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="assets/svg/logo-mark-rust.svg">
-<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="/assets/svg/logo-mark-rust.svg">
+<link rel="stylesheet" href="/styles.css">
 <style>
   .notfound{
     min-height:100vh;
@@ -19,7 +19,7 @@
     text-align:center;
     padding:var(--space-6) var(--space-4);
   }
-  .notfound svg{
+  .notfound > svg{
     width:120px;
     height:auto;
     color:var(--rust);
@@ -41,6 +41,8 @@
     font-weight:700;
     margin-bottom:var(--space-3);
   }
+  .nf-links{list-style:none; padding:0; margin:0 0 var(--space-5); display:flex; flex-wrap:wrap; gap:var(--space-2) var(--space-4); justify-content:center; max-width:56ch;}
+  .nf-links a{color:var(--link); text-decoration:underline; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
   .notfound p{
     color:var(--cream-dim);
     max-width:48ch;
@@ -58,11 +60,65 @@
   <span class="code">Error 404</span>
   <h1>This page doesn't exist yet.</h1>
   <p>Maybe it's a project we haven't shipped, or a link that moved. Either way, let's get you back on track.</p>
+  <p id="nfGuess" hidden></p>
+  <ul class="nf-links" aria-label="Main pages">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/resources.html">Resources</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/research.html">Research</a></li>
+    <li><a href="/news.html">News</a></li>
+    <li><a href="/community.html">Community</a></li>
+    <li><a href="/changelog.html">Changelog</a></li>
+    <li><a href="/policy.html">Policy</a></li>
+    <li><a href="/terms.html">Terms &amp; Privacy</a></li>
+    <li><a href="/accessibility.html">Accessibility</a></li>
+    <li><a href="/brand.html">Brand kit</a></li>
+  </ul>
   <a href="/" class="btn btn-primary">
     Back to Link with iQ
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11L11 3M11 3H5M11 3V9"/></svg>
   </a>
 </main>
+
+<script>
+  // Suggest the closest real page to the address that was typed. Runs only in this browser.
+  (function () {
+    var pages = [
+      ['about', 'About'], ['resources', 'Resources'], ['blog', 'Blog'], ['research', 'Research'], ['news', 'News'],
+      ['community', 'Community'], ['changelog', 'Changelog'], ['policy', 'Policy'], ['terms', 'Terms & Privacy'],
+      ['accessibility', 'Accessibility'], ['brand', 'Brand kit'], ['uses', 'Uses']
+    ];
+    var typed = decodeURIComponent(location.pathname).toLowerCase().replace(/\/+$/, '').split('/').pop().replace(/\.html?$/, '');
+    if (!typed) return;
+    function dist(a, b) {
+      var m = [], i, j;
+      for (i = 0; i <= a.length; i++) { m[i] = [i]; }
+      for (j = 1; j <= b.length; j++) { m[0][j] = j; }
+      for (i = 1; i <= a.length; i++) for (j = 1; j <= b.length; j++) {
+        m[i][j] = Math.min(m[i - 1][j] + 1, m[i][j - 1] + 1, m[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      }
+      return m[a.length][b.length];
+    }
+    var best = null, bestD = 99;
+    pages.forEach(function (p) {
+      var d = (typed.indexOf(p[0]) === 0 || p[0].indexOf(typed) === 0) && typed.length >= 3 ? 0 : dist(typed, p[0]);
+      if (d < bestD) { bestD = d; best = p; }
+    });
+    if (best && bestD <= 3) {
+      var el = document.getElementById('nfGuess');
+      el.textContent = 'Did you mean ';
+      var a = document.createElement('a');
+      a.href = '/' + best[0] + '.html';
+      a.textContent = best[1];
+      a.style.color = 'var(--link)';
+      a.style.textDecoration = 'underline';
+      el.appendChild(a);
+      el.appendChild(document.createTextNode('?'));
+      el.hidden = false;
+    }
+  })();
+</script>
 
 </body>
 </html>

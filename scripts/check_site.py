@@ -42,6 +42,7 @@ def check_internal_links():
                 target_file, anchor = href.split('#', 1)
             else:
                 target_file, anchor = href, None
+            target_file = target_file.lstrip('/')
             if target_file == '':
                 target_file = f
             # known subpaths not necessarily present as flat files in repo root
@@ -84,6 +85,15 @@ def check_xml_json_validity():
                 ET.parse(f)
             except ET.ParseError as e:
                 errors.append(f'{f}: invalid XML — {e}')
+    if os.path.exists('feed.json'):
+        try:
+            fj = json.load(open('feed.json'))
+            if not fj.get('version', '').startswith('https://jsonfeed.org/version/'):
+                errors.append('feed.json: missing or wrong "version"')
+            if not isinstance(fj.get('items'), list) or not fj['items']:
+                errors.append('feed.json: "items" is empty')
+        except json.JSONDecodeError as e:
+            errors.append(f'feed.json: invalid JSON — {e}')
     if os.path.exists('manifest.json'):
         try:
             json.load(open('manifest.json'))
@@ -102,7 +112,18 @@ def check_jsonld_validity():
                 errors.append(f'{f}: invalid JSON-LD block — {e}')
 
 
+def check_weight_budget():
+    # keeps pages light: no ad-hoc heavy files sneaking in
+    budgets = [('*.html', 200_000), ('styles.css', 150_000), ('script.js', 60_000), ('assets/fonts/*.woff2', 60_000), ('assets/og/*.png', 150_000)]
+    for pattern, limit in budgets:
+        for f in glob.glob(pattern):
+            size = os.path.getsize(f)
+            if size > limit:
+                errors.append(f'{f}: {size:,} bytes exceeds the {limit:,}-byte budget')
+
+
 check_internal_links()
+check_weight_budget()
 check_sitemap_freshness()
 check_xml_json_validity()
 check_jsonld_validity()
@@ -113,4 +134,4 @@ if errors:
         print(f'  - {e}')
     sys.exit(1)
 else:
-    print('All checks passed: internal links, sitemap freshness, XML/JSON/JSON-LD validity.')
+    print('All checks passed: internal links, sitemap freshness, XML/JSON/JSON-LD validity, weight budget.')
