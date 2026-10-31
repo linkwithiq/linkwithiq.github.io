@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Terms & Privacy — Link with iQ</title>
 <meta name="description" content="Terms of use and privacy policy for linkwithiq.github.io.">
@@ -27,9 +27,6 @@
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="is-loading">
@@ -142,8 +139,8 @@
         <ul>
           <li><strong>GitHub Pages hosting.</strong> Like any web host, GitHub Pages' infrastructure receives standard request data (IP address, browser type, requested page) to serve you the Site. That's governed by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub's own privacy statement</a>, not something we control or receive.</li>
           <li><strong>Live GitHub stats.</strong> Some pages (project cards, the Community page) fetch public data directly from the GitHub API from your browser — star counts, contributor lists, open issues. This is a request from your browser straight to GitHub's API; we don't proxy or log it ourselves, but GitHub will see the request came from your IP address, same as visiting github.com directly.</li>
-          <li><strong>Google Fonts.</strong> This Site loads typefaces from Google Fonts' CDN. Google may log standard request data for that. If you'd rather avoid this, most ad blockers and privacy extensions block it without breaking the Site (it just falls back to your system font).</li>
           <li><strong>Contact &amp; newsletter form.</strong> The "Get in touch" and newsletter signup on the homepage don't submit to a server we run — clicking them opens your own email client with a pre-filled message. We only see what you actually choose to send us by email, and it goes to that inbox like any other email.</li>
+          <li><strong>Offline cache.</strong> Your browser stores copies of this Site's own pages and files (using a service worker) so pages you've visited still open without a connection. It stays on your device, contains nothing about you, and you can clear it from your browser's site settings.</li>
         </ul>
 
         <h2>Children's privacy</h2>
@@ -205,6 +202,8 @@
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="brand.html">Brand kit</a>
         <a href="policy.html">Policy</a>
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>

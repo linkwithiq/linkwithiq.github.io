@@ -2,86 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://linkwithiq.github.io/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/about.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/uses.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/resources.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/community.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/blog.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/blog/why-open-by-default.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/blog/scoping-community-toolkit.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/research.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/research/civic-reporting-landscape.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/news.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/changelog.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/policy.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://linkwithiq.github.io/terms.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://linkwithiq.github.io/accessibility.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://linkwithiq.github.io/brand.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

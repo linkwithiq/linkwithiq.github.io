@@ -1,0 +1,6 @@
+Self-hosted fonts (latin subset, WOFF2), via the Fontsource project.
+All three families are licensed under the SIL Open Font License 1.1
+(https://openfontlicense.org):
+  - Oswald         © The Oswald Project Authors
+  - Inter          © The Inter Project Authors
+  - JetBrains Mono © The JetBrains Mono Project Authors

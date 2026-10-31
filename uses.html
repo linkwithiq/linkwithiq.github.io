@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Uses — Link with iQ</title>
 <meta name="description" content="What this site is built with — stack, design tokens, hosting, and what's deliberately not here.">
@@ -27,9 +27,6 @@
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="is-loading">
@@ -105,13 +102,13 @@
         <p>GitHub Pages, serving static files directly from the repo. No server-side backend, no database — which is also why the <a href="terms.html#privacy" style="color:var(--link);">privacy policy</a> can honestly say there's no server-side data collection: there's no server to collect anything.</p>
 
         <h2>Design</h2>
-        <p>Every color, spacing, and type value is a CSS custom property in <code>styles.css</code> — <code>--ink</code>, <code>--cream</code>, <code>--rust</code>, <code>--signal</code>, and the spacing/radius scale, so the whole look can be retuned from one place. Type is <strong>Oswald</strong> for headings, <strong>Inter</strong> for body text, and <strong>JetBrains Mono</strong> for labels and code, loaded from Google Fonts. The logo mark exists as hand-traced SVG paths in four color variants rather than a raster export, so it stays crisp at any size and can recolor with <code>currentColor</code>.</p>
+        <p>Every color, spacing, and type value is a CSS custom property in <code>styles.css</code> — <code>--ink</code>, <code>--cream</code>, <code>--rust</code>, <code>--signal</code>, and the spacing/radius scale, so the whole look can be retuned from one place. Type is <strong>Oswald</strong> for headings, <strong>Inter</strong> for body text, and <strong>JetBrains Mono</strong> for labels and code, all self-hosted from this site. The logo mark exists as hand-traced SVG paths in four color variants rather than a raster export, so it stays crisp at any size and can recolor with <code>currentColor</code>.</p>
 
         <h2>Live data</h2>
         <p>Where the site shows real-time information — star counts and last-updated dates on project cards, the good-first-issue feed, and contributor avatars on the <a href="community.html" style="color:var(--link);">Community</a> page — it's fetched directly from the browser to the public GitHub API. Nothing is proxied or logged on this end; see the <a href="terms.html#privacy" style="color:var(--link);">Privacy Policy</a> for exactly what that means.</p>
 
         <h2>What's deliberately not here</h2>
-        <p>No analytics or tracking scripts of any kind. No cookies. No client-side framework (React, Vue, or otherwise). No CMS. No advertising. No third-party embeds beyond Google Fonts and the GitHub API calls described above. This isn't a placeholder list to fill in later — it's the current, accurate state of the stack, and it'll be updated here the day any of it changes.</p>
+        <p>No analytics or tracking scripts of any kind. No cookies. No client-side framework (React, Vue, or otherwise). No CMS. No advertising. No third-party embeds. The only outside request is the public GitHub API, described above; fonts are served from this site. This isn't a placeholder list to fill in later — it's the current, accurate state of the stack, and it'll be updated here the day any of it changes.</p>
 
         <h2>Full detail</h2>
         <p>The complete technical writeup — deploy steps, known bugs and their fixes, the full design token list — lives in the repository's <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer" style="color:var(--link);">README on GitHub</a>.</p>
@@ -165,6 +162,8 @@
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="brand.html">Brand kit</a>
         <a href="policy.html">Policy</a>
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>

@@ -1,3 +1,16 @@
+/* ---- self-hosted fonts (SIL OFL 1.1, see assets/fonts/LICENSES.txt) ---- */
+@font-face{font-family:'Oswald';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/oswald-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/oswald-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/oswald-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/oswald-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/inter-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/inter-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/inter-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/inter-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/jetbrains-mono-latin-600-normal.woff2') format('woff2');}
+
 /* ============================================================
    LINK WITH iQ — design system
    Palette pulled + adapted from brand token extraction:
@@ -1308,3 +1321,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .btn,.filter-tab,.nav-toggle,.nav-close,.back-to-top,.rss-link,.nav-links a.cta-link{min-height:44px; min-width:44px;}
 .btn,.filter-tab,.rss-link{display:inline-flex; align-items:center; justify-content:center;}
 @media (max-width:900px){.back-to-top{width:44px; height:44px;}}
+
+/* ---- brand kit ---- */
+.logo-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--space-3); margin:var(--space-4) 0;}
+.logo-tile{display:flex; flex-direction:column; align-items:center; gap:var(--space-3); padding:var(--space-5) var(--space-3); border:1px solid var(--hair); border-radius:6px;}
+.logo-tile a{font-family:var(--mono); font-size:13px; text-decoration:underline; min-height:44px; display:inline-flex; align-items:center;}
+.swatch-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--space-3); margin:var(--space-4) 0;}
+.swatch{display:flex; gap:var(--space-3); align-items:flex-start; font-size:14px; color:var(--cream-dim);}
+.swatch-chip{flex:0 0 48px; width:48px; height:48px; border-radius:4px; border:1px solid var(--hair-strong);}
+.swatch-ratio{font-family:var(--mono); font-size:12px;}
+.nav-links a.cta-link{display:inline-flex; align-items:center; justify-content:center;}

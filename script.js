@@ -440,3 +440,10 @@ if (!PREFERS_REDUCED_MOTION && 'IntersectionObserver' in window) {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   revealTargets.forEach(el => io.observe(el));
 }
+
+// ---- offline support: cache this site's own files so visited pages open without a connection ----
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => { /* offline support is optional */ });
+  });
+}

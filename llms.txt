@@ -8,8 +8,9 @@ Link with iQ researches, builds, and shares open-source software, tools, and res
 
 - [Home](https://linkwithiq.github.io/): Mission, current projects, and how to get in touch
 - [About](https://linkwithiq.github.io/about.html): Founder, principles, and full mission
-- [Now](https://linkwithiq.github.io/now.html): What's actively being worked on, dated
 - [Uses](https://linkwithiq.github.io/uses.html): The actual tech stack this site runs on
+- [Accessibility](https://linkwithiq.github.io/accessibility.html): Accessibility status, testing, and how to report a barrier
+- [Brand kit](https://linkwithiq.github.io/brand.html): Name usage, logo downloads, colours, typography
 - [Policy](https://linkwithiq.github.io/policy.html): Positions on licensing, AI use, and accessibility
 - [Terms & Privacy](https://linkwithiq.github.io/terms.html): What data this site does and doesn't collect
 - [Blog](https://linkwithiq.github.io/blog.html): Notes on what's being built and why

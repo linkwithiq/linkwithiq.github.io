@@ -14,4 +14,4 @@
     Components: Hand-traced SVG logo marks, no icon library
     Software: No framework, no build step, no bundler — plain HTML/CSS/JS,
               deployed straight to GitHub Pages
-    Fonts: Google Fonts (Oswald, Inter, JetBrains Mono)
+    Fonts: Oswald, Inter, JetBrains Mono (self-hosted, SIL OFL)

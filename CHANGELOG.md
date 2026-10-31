@@ -13,6 +13,21 @@ Roughly ordered by what's likely to land soonest. Nothing here is promised; see 
 - **Exploring** — Study With iQ: a second (Python) learning track, once the web-basics track has been tested by real learners
 - **Exploring** — Report It pilot city, pending a city with usable public-works reporting intake ([research note](https://linkwithiq.github.io/research.html))
 
+## 2026-10
+
+### Added
+- Accessibility statement (`accessibility.html`) and brand kit (`brand.html`)
+- Offline support via a small service worker (`sw.js`) that caches only this site's own files in the visitor's browser
+- GitHub issue and pull-request templates, and a weekly external link check
+
+### Changed
+- Fonts (Oswald, Inter, JetBrains Mono) are now self-hosted in `assets/fonts/`; Google Fonts is no longer used
+- Accent text and green status text lightened to reach 7:1 contrast; main controls are at least 44×44px
+- Privacy policy updated to match (fonts, offline cache, no theme preference)
+
+### Removed
+- The "Theme preference" claim from the privacy policy (the theme toggle no longer exists)
+
 ## 2026-08
 
 ### Added

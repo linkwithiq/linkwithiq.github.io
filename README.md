@@ -17,13 +17,17 @@ research/*.html        — individual research notes
 news.html             — Announcements
 policy.html            — Where we stand (licensing, AI use, accessibility, data)
 terms.html            — Terms of Use & Privacy Policy
+accessibility.html    — Accessibility statement
+brand.html            — Brand kit (name, logo, colours, type)
+uses.html             — Colophon: what the site is built with
+sw.js                 — Offline cache (this site's own files only)
 404.html              — Themed not-found page (GitHub Pages serves this automatically)
 
 styles.css            — design system + layout (single stylesheet, shared by every page)
 script.js             — all interactive behavior (shared by every page)
 
 manifest.json, robots.txt, sitemap.xml — PWA/SEO metadata
-assets/               — logo exports (PNG + SVG) and favicons
+assets/               — logo exports (PNG + SVG), favicons, self-hosted fonts (assets/fonts), brand SVGs (assets/brand)
 ```
 
 Every page shares the same header, footer, loading screen, and `<script src="script.js">` — there's no build step stitching them together; each `.html` file is a complete, independent document. Pages inside a subfolder (`blog/`, `research/`) use `../` prefixes for their asset paths.

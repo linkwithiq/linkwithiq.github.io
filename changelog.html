@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Changelog — Link with iQ</title>
 <meta name="description" content="What's shipped, what's in progress, and what's next for Link with iQ.">
@@ -28,9 +28,6 @@
 <meta name="theme-color" content="#1a1108">
 <meta name="color-scheme" content="dark light">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="is-loading">
@@ -103,6 +100,18 @@
       </div>
 
       <div class="resource-list">
+        <div class="resource-row">
+          <span class="resource-index">—</span>
+          <h3>Fonts served from this site; offline support</h3>
+          <p>Oswald, Inter, and JetBrains Mono are now self-hosted, so the site no longer contacts Google Fonts. Pages you've visited also open offline, using files cached in your own browser.</p>
+          <span class="tag">Oct 2026</span>
+        </div>
+        <div class="resource-row">
+          <span class="resource-index">—</span>
+          <h3>Accessibility statement, brand kit, and higher contrast</h3>
+          <p>Added an accessibility statement and a brand kit page. Accent text now reaches 7:1 contrast on every dark surface, and main controls are at least 44&times;44px.</p>
+          <span class="tag">Oct 2026</span>
+        </div>
         <div class="resource-row">
           <span class="resource-index">—</span>
           <h3>Site-wide: Blog, Research, News, Policy, Community, and Terms pages</h3>
@@ -202,6 +211,8 @@
         <h4>Company</h4>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="brand.html">Brand kit</a>
         <a href="policy.html">Policy</a>
         <a href="terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
