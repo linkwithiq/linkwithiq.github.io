@@ -25,3 +25,7 @@ Don't open a public issue for anything that looks like a real vulnerability — 
 ## Questions
 
 Fastest way to reach the maintainer: **linkwithiq@proton.me**, or open an issue directly on the relevant repo.
+
+## Code of conduct
+
+Be kind and keep it respectful: see [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
