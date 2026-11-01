@@ -15,13 +15,13 @@ jobs:
       - run: npm install --no-save playwright pngjs pixelmatch@5
       - run: npx playwright install --with-deps chromium
       - run: node scripts/visual_check.js
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: visual-baselines
           path: tests/visual
           if-no-files-found: ignore
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: visual-diffs
