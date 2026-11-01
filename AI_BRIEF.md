@@ -29,7 +29,8 @@ index, about, resources, blog, research, news, community, changelog, project, po
 7. Email address is always `linkwithiq@proton.me`. Never reintroduce `hello@linkwithiq.dev`.
 
 ## Security and technical conventions
-- Every page has a strict `<meta>` Content-Security-Policy. Pages that call the GitHub API need `connect-src 'self' https://api.github.com`; avatars need `img-src ... https://avatars.githubusercontent.com`. Don't loosen the CSP.
+- Every page has a strict `<meta>` Content-Security-Policy. Pages that call the GitHub API need `connect-src 'self' https://api.github.com`; avatars need `img-src ... https://avatars.githubusercontent.com`. Don't loosen the CSP. Scripts are allowed by hash, not `'unsafe-inline'`: after editing any inline `<script>`, run `python3 scripts/csp_hashes.py`.
+- Only use URLs from the GitHub API after checking the host (`safeGitHubUrl` in `script.js`).
 - Build DOM from API data with `createElement` and `textContent`, never `innerHTML` with remote data.
 - External links use `rel="noopener noreferrer"` (links to Ajit's own sites also carry `me`).
 - Skip link is `<a href="#top" class="skip-link">`, and `<main id="top" tabindex="-1">`.

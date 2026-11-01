@@ -122,7 +122,22 @@ def check_weight_budget():
                 errors.append(f'{f}: {size:,} bytes exceeds the {limit:,}-byte budget')
 
 
+def check_csp_covers_inline_scripts():
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    from csp_hashes import inline_scripts, digest
+    for f in glob.glob('*.html'):
+        html = open(f, encoding='utf-8').read()
+        m = re.search(r'script-src([^;]*);', html)
+        policy = m.group(1) if m else ''
+        if "'unsafe-inline'" in policy:
+            errors.append(f'{f}: script-src allows unsafe-inline; use hashes (python3 scripts/csp_hashes.py)')
+        for body in inline_scripts(html):
+            if digest(body) not in policy:
+                errors.append(f'{f}: an inline script is not covered by the CSP; run python3 scripts/csp_hashes.py')
+
+
 check_internal_links()
+check_csp_covers_inline_scripts()
 check_weight_budget()
 check_sitemap_freshness()
 check_xml_json_validity()

@@ -28,6 +28,19 @@ Roughly ordered by what's likely to land soonest. Nothing here is promised; see 
 - Accent text and green status text lightened to reach 7:1 contrast; main controls are at least 44×44px
 - Privacy policy updated to match (fonts, offline cache, no theme preference)
 
+- "In short" summaries on the Policy and Terms pages; ready-to-copy boilerplate on the brand kit; latest release tag on project cards when a release exists
+- Optional "Comfortable reading" button (larger, more widely spaced text, saved in this browser only; disclosed in `terms.html`)
+- Visual regression check (`scripts/visual_check.js` + workflow), `scripts/update_lastmod.py`, and `docs/LAUNCH_CHECKLIST.md`
+
+### Security
+- Inline scripts are now allowed by hash instead of `'unsafe-inline'` in the Content-Security-Policy; `scripts/csp_hashes.py` regenerates the hashes and `check_site.py` fails if one is missing
+- Links and avatar images from the GitHub API are only used if they point at github.com or avatars.githubusercontent.com
+
+### Fixed
+- Spacing: less dead space under page titles on inner pages; on phones and tablets the home page headline and buttons now come before the large logo
+- Heading levels no longer skip (footer headings, post lists); axe best-practice rules now pass
+- `project.html` shows a "couldn't find that project" message instead of a blank page when nothing has filled in the template
+
 ### Removed
 - The "Theme preference" claim from the privacy policy (the theme toggle no longer exists)
 

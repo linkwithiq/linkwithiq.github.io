@@ -30,7 +30,7 @@ const server = http.createServer((req, res) => {
       await page.addStyleTag({ content: '.loading-screen{display:none!important}body{overflow:auto!important}' });
       await page.evaluate(() => document.fonts.ready);
       await page.evaluate(axeSource);
-      const result = await page.evaluate(() => axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } }));
+      const result = await page.evaluate(() => axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'] } }));
       for (const v of result.violations) {
         total += v.nodes.length;
         console.log(`✗ ${f} @${width}px  ${v.id} (${v.impact}): ${v.help}`);

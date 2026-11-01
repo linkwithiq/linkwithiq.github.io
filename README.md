@@ -106,5 +106,9 @@ Written content (blog posts, research notes, page copy) is **not** covered by th
 
 - `python3 scripts/check_site.py`: internal links and anchors, sitemap freshness, XML/JSON/JSON-LD validity, weight budget.
 - `node scripts/a11y_check.js` (needs `npm i playwright axe-core`): axe-core accessibility test of every page at desktop and phone width.
+- `python3 scripts/csp_hashes.py`: run after editing any inline `<script>`; it updates each page's Content-Security-Policy hash. `check_site.py` fails if one is out of date.
+- `node scripts/visual_check.js`: screenshot comparison of every page against baselines in `tests/visual/` (create them on the machine that compares; see the header of the script). `--update` accepts the current look.
+- `python3 scripts/update_lastmod.py`: sets sitemap dates from git history.
+- `docs/LAUNCH_CHECKLIST.md`: GitHub settings and reminders.
 - `scripts/pre-commit`: optional git hook that runs the first check before each commit.
 - CI runs both on every push, plus a weekly external link check.

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-s4phCGuYb5oXebGSs5nV/1dqlZvCHnw1RnJcRn1pWGM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Brand kit — Link with iQ</title>
 <meta name="description" content="Name usage, logo downloads, colours, and typography for Link with iQ.">
@@ -109,6 +109,15 @@
         <h2 id="type">Typography</h2>
         <p><strong>Oswald</strong> (uppercase, headings), <strong>Inter</strong> (body text), and <strong>JetBrains Mono</strong> (labels and code). All three are open fonts under the SIL Open Font License 1.1, and the files are served from this site's <code>assets/fonts</code> folder.</p>
 
+        <h2 id="boilerplate">Boilerplate</h2>
+        <p>Copy whichever length fits. We keep these in step with what the site actually says.</p>
+        <h3>One line</h3>
+        <p class="boilerplate">Link with iQ is an independent research and development organization building practical, private, and open technology.</p>
+        <h3>Short paragraph</h3>
+        <p class="boilerplate">Link with iQ is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open. Every project and resource is free to use, and the code is open so anyone can inspect, fork, or build on it. It is founded, owned, and maintained by Ajit (asrbmy).</p>
+        <h3>Full</h3>
+        <p class="boilerplate">Link with iQ (linkwithiq.github.io) is an independent research and development organization researching, building, and sharing practical technology that is private, accessible, simple, and open. Every project and resource is free to use, and the code is open so anyone can inspect, fork, or build on it. The site uses no cookies, analytics, or tracking, and says plainly what is finished and what is still an idea. Link with iQ is an early-stage independent project, not a registered company. It is founded, owned, and maintained by Ajit (asrbmy).</p>
+
         <h2 id="using">Using the name and mark</h2>
         <p>You're welcome to use the name and mark to refer to Link with iQ: linking to us, mentioning our work, or covering the project. Please don't use them in a way that suggests we endorse or are affiliated with something we aren't. For anything beyond that, <a href="mailto:linkwithiq@proton.me?subject=Brand%20question" style="color:var(--link);">ask first</a>. The site's source code is MIT-licensed; the written content follows the <a href="terms.html" style="color:var(--link);">Terms</a>.</p>
 
@@ -143,7 +152,7 @@
         <p>An independent research and development organization building practical, private, and open technology.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="index.html#mission">Mission</a>
         <a href="index.html#projects">Projects</a>
         <a href="resources.html">Resources</a>
@@ -151,14 +160,14 @@
         <a href="index.html#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Read</h4>
+        <h3>Read</h3>
         <a href="blog.html">Blog</a>
         <a href="research.html">Research</a>
         <a href="news.html">News</a>
         <a href="changelog.html">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
         <a href="accessibility.html">Accessibility</a>
@@ -174,6 +183,7 @@
     <div class="footer-bottom">
       <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="me noopener noreferrer">Ajit (asrbmy)</a></span>
       <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+      <button type="button" class="comfort-toggle" id="comfortToggle" aria-pressed="false" hidden>Comfortable reading</button>
     </div>
   </div>
 </footer>

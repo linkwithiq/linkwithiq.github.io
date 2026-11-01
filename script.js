@@ -1,5 +1,14 @@
 // ---- shared: respect the user's motion preference everywhere, once ----
+
 const PREFERS_REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---- only follow links / images from the GitHub API if they really point at GitHub ----
+function safeGitHubUrl(value, allowedHosts) {
+  try {
+    const u = new URL(String(value));
+    return u.protocol === 'https:' && allowedHosts.includes(u.hostname) ? u.href : null;
+  } catch (e) { return null; }
+}
 
 // ---- loading screen: draw the logo in, then fill it, then reveal the site ----
 (function initLoadingScreen(){
@@ -29,28 +38,28 @@ const PREFERS_REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduc
     });
 
     let settled = false;
-    function safeFinish(){
+    const safeFinish = function(){
       if (settled) return;
       settled = true;
       finishLoading();
-    }
+    };
 
     // fill in (and reveal the wordmark) once the drop stroke has finished drawing
-    function onStrokeDone(e){
+    const onStrokeDone = function(e){
       if (e.propertyName !== 'stroke-dashoffset') return;
       drop.removeEventListener('transitionend', onStrokeDone);
       outer.style.fillOpacity = '1';
       drop.style.fillOpacity = '1';
       if (wordmark) wordmark.classList.add('visible');
-    }
+    };
     drop.addEventListener('transitionend', onStrokeDone);
 
     // reveal the site once the fill-in has finished
-    function onFillDone(e){
+    const onFillDone = function(e){
       if (e.propertyName !== 'fill-opacity') return;
       outer.removeEventListener('transitionend', onFillDone);
       safeFinish();
-    }
+    };
     outer.addEventListener('transitionend', onFillDone);
 
     // wait a frame so the browser registers the starting dashoffset
@@ -296,6 +305,17 @@ async function loadProjectStats() {
       if (updated) parts.push(`updated ${updated}`);
       statsEl.textContent = parts.join(' · ');
       statsEl.hidden = false;
+      // latest release tag, if the project has published one (silently skipped otherwise)
+      try {
+        const rel = await fetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } });
+        if (rel.ok) {
+          const tag = (await rel.json()).tag_name;
+          if (typeof tag === 'string' && /^[\w.+-]{1,24}$/.test(tag)) {
+            parts.push(`latest ${tag}`);
+            statsEl.textContent = parts.join(' · ');
+          }
+        }
+      } catch (e) { /* no release info: leave the stats as they are */ }
     } catch (err) {
       // network error, offline, blocked by an extension, etc. — leave hidden
     }
@@ -330,7 +350,7 @@ async function loadGoodFirstIssues() {
       li.className = 'issue-row';
 
       const link = document.createElement('a');
-      link.href = issue.html_url;
+      link.href = safeGitHubUrl(issue.html_url, ['github.com']) || 'https://github.com/linkwithiq';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.className = 'issue-title';
@@ -387,13 +407,13 @@ async function loadContributorAvatars() {
     }
     contributors.forEach(c => {
       const a = document.createElement('a');
-      a.href = c.html_url;
+      a.href = safeGitHubUrl(c.html_url, ['github.com']) || 'https://github.com/linkwithiq';
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
       a.className = 'contributor-avatar-link';
       a.title = c.login;
       const img = document.createElement('img');
-      img.src = c.avatar_url;
+      img.src = safeGitHubUrl(c.avatar_url, ['avatars.githubusercontent.com']) || '';
       img.alt = c.login;
       img.width = 40;
       img.height = 40;
@@ -453,3 +473,22 @@ document.querySelectorAll('.report-link').forEach(link => {
   const body = encodeURIComponent(`Page: ${location.href}\n\nWhat went wrong:\n`);
   link.href = `mailto:linkwithiq@proton.me?subject=${encodeURIComponent('Problem with ' + document.title)}&body=${body}`;
 });
+
+// ---- project.html: never leave a blank page if nothing has filled in the project template ----
+window.addEventListener('load', () => {
+  const content = document.getElementById('projectContent');
+  const notFound = document.getElementById('projectNotFound');
+  if (content && notFound && content.hidden && notFound.hidden) notFound.hidden = false;
+});
+
+// ---- comfortable reading: opt-in larger, more widely spaced text, remembered in this browser only ----
+(function initComfort(){
+  const btn = document.getElementById('comfortToggle');
+  if (!btn) return;
+  btn.hidden = false;
+  const read = () => { try { return localStorage.getItem('liq-comfort') === '1'; } catch (e) { return false; } };
+  const write = (on) => { try { if (on) localStorage.setItem('liq-comfort', '1'); else localStorage.removeItem('liq-comfort'); } catch (e) { /* storage unavailable: still works for this visit */ } };
+  const apply = (on) => { document.documentElement.classList.toggle('comfy', on); btn.setAttribute('aria-pressed', String(on)); };
+  apply(read());
+  btn.addEventListener('click', () => { const on = !document.documentElement.classList.contains('comfy'); apply(on); write(on); });
+})();

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-s4phCGuYb5oXebGSs5nV/1dqlZvCHnw1RnJcRn1pWGM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Policy — Link with iQ</title>
 <meta name="description" content="Where Link with iQ stands on open source licensing, accessibility, and the use of AI in our projects.">
@@ -105,6 +105,10 @@
       </div>
 
       <div class="legal-body">
+        <div class="in-short">
+          <h2>In short</h2>
+          <p>Our projects are open source from the first commit. We use AI tools and say so plainly, and never to invent testimonials, numbers, or claims. We aim for an accessible site (see the <a href="accessibility.html" style="color:var(--link);">accessibility statement</a>), and we collect as little data as we can.</p>
+        </div>
         <h2 id="open-source-licensing">Open source licensing</h2>
         <p>Every project we publish carries an explicit open source license (typically MIT) from its first commit. We don't run a "source available, but not really open" model, and we don't plan to relicense a project to close it off after people have started depending on it. If a project's license ever needs to change, we'll explain why, publicly, before it happens. This site's own code follows the same rule — see its <a href="https://github.com/linkwithiq/linkwithiq.github.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color:var(--link);">LICENSE</a>.</p>
 
@@ -155,7 +159,7 @@
         <p>An independent research and development organization building practical, private, and open technology.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="index.html#mission">Mission</a>
         <a href="index.html#projects">Projects</a>
         <a href="resources.html">Resources</a>
@@ -163,13 +167,13 @@
         <a href="index.html#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Read</h4>
+        <h3>Read</h3>
         <a href="blog.html">Blog</a>
         <a href="research.html">Research</a>
         <a href="news.html">News</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
         <a href="accessibility.html">Accessibility</a>
@@ -185,6 +189,7 @@
     <div class="footer-bottom">
       <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="me noopener noreferrer">Ajit (asrbmy)</a></span>
       <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+      <button type="button" class="comfort-toggle" id="comfortToggle" aria-pressed="false" hidden>Comfortable reading</button>
     </div>
   </div>
 </footer>

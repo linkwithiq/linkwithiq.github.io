@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-s4phCGuYb5oXebGSs5nV/1dqlZvCHnw1RnJcRn1pWGM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Terms & Privacy — Link with iQ</title>
 <meta name="description" content="Terms of use and privacy policy for linkwithiq.github.io.">
@@ -104,6 +104,10 @@
       </div>
 
       <div class="legal-body">
+        <div class="in-short">
+          <h2>In short</h2>
+          <p>Everything here is provided as is, by an independent project that is not a registered company. The site uses no cookies, analytics, or tracking. Some pages fetch public numbers from GitHub in your browser, and your browser may keep an offline copy of the pages you visit. Questions? <a href="mailto:linkwithiq@proton.me" style="color:var(--link);">Email us</a>.</p>
+        </div>
         <p class="legal-updated">Last updated: October 2026</p>
 
         <h2 id="terms">1. Terms of Use</h2>
@@ -141,6 +145,7 @@
           <li><strong>Live GitHub stats.</strong> Some pages (project cards, the Community page) fetch public data directly from the GitHub API from your browser — star counts, contributor lists, open issues. This is a request from your browser straight to GitHub's API; we don't proxy or log it ourselves, but GitHub will see the request came from your IP address, same as visiting github.com directly.</li>
           <li><strong>Contact &amp; newsletter form.</strong> The "Get in touch" and newsletter signup on the homepage don't submit to a server we run — clicking them opens your own email client with a pre-filled message. We only see what you actually choose to send us by email, and it goes to that inbox like any other email.</li>
           <li><strong>Offline cache.</strong> Your browser stores copies of this Site's own pages and files (using a service worker) so pages you've visited still open without a connection. It stays on your device, contains nothing about you, and you can clear it from your browser's site settings.</li>
+          <li><strong>Reading preference.</strong> If you turn on "Comfortable reading" (larger, more widely spaced text), that choice is saved in your browser's local storage so it is remembered next visit. It never leaves your device and isn't accessible to us.</li>
         </ul>
 
         <h2>Children's privacy</h2>
@@ -185,7 +190,7 @@
         <p>An independent research and development organization building practical, private, and open technology.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="index.html#mission">Mission</a>
         <a href="index.html#projects">Projects</a>
         <a href="resources.html">Resources</a>
@@ -193,13 +198,13 @@
         <a href="index.html#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Read</h4>
+        <h3>Read</h3>
         <a href="blog.html">Blog</a>
         <a href="research.html">Research</a>
         <a href="news.html">News</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="about.html">About</a>
         <a href="uses.html">Uses</a>
         <a href="accessibility.html">Accessibility</a>
@@ -215,6 +220,7 @@
     <div class="footer-bottom">
       <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="me noopener noreferrer">Ajit (asrbmy)</a></span>
       <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+      <button type="button" class="comfort-toggle" id="comfortToggle" aria-pressed="false" hidden>Comfortable reading</button>
     </div>
   </div>
 </footer>
