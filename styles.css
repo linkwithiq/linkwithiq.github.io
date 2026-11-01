@@ -1361,3 +1361,24 @@ html.comfy main p{max-width:68ch;}
   .hero + section{padding-top:var(--space-4);}
 }
 .hero[style*="padding-bottom"]{padding-bottom:var(--space-4) !important;}
+
+/* ---- project detail page (project.html) ---- */
+.project-detail-hero{padding:var(--space-7) 0 var(--space-5);}
+.project-detail-hero .back-link{margin-bottom:var(--space-5);}
+.project-detail-hero #pName{
+  font-family:var(--display); text-transform:uppercase; font-weight:700;
+  font-size:clamp(34px,6vw,64px); line-height:1.02; margin:var(--space-3) 0 var(--space-3);
+}
+.project-detail-hero .project-status{margin-bottom:var(--space-2);}
+.project-detail-summary{font-size:19px; color:var(--cream-dim); max-width:64ch; margin-bottom:var(--space-3);}
+.project-detail-hero .tag-row{margin-bottom:var(--space-4);}
+.project-detail-hero .hero-actions{margin-top:var(--space-4);}
+.project-not-found{max-width:56ch; padding:var(--space-5) 0;}
+.project-not-found h1{font-family:var(--display); text-transform:uppercase; font-size:clamp(30px,5vw,48px); line-height:1.05; margin-bottom:var(--space-3);}
+.project-not-found p{color:var(--cream-dim); margin-bottom:var(--space-4);}
+#projectBody{padding:var(--space-5) 0 var(--space-6);}
+.project-detail-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-4);}
+.project-detail-col{background:var(--ink-panel); border:1px solid var(--hair); border-radius:6px; padding:var(--space-4);}
+.project-detail-col h2{font-family:var(--display); text-transform:uppercase; font-size:20px; font-weight:600; margin:0 0 var(--space-2); color:var(--cream);}
+.project-detail-col p{color:var(--cream-dim); line-height:1.7; margin:0;}
+@media (max-width:900px){.project-detail-grid{grid-template-columns:1fr;} .project-detail-hero{padding-top:var(--space-6);}}

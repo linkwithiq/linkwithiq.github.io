@@ -25,7 +25,8 @@ const server = http.createServer((req, res) => {
 (async () => {
   await new Promise(r => server.listen(0, r));
   const base = `http://localhost:${server.address().port}`;
-  const pages = fs.readdirSync(root).filter(f => f.endsWith('.html') && f !== '404.html').sort();
+  const listDir = d => fs.readdirSync(path.join(root, d)).filter(f => f.endsWith('.html')).map(f => path.posix.join(d, f));
+  const pages = [...fs.readdirSync(root).filter(f => f.endsWith('.html')), ...listDir('blog'), ...listDir('research')].filter(f => f !== '404.html').sort();
   fs.mkdirSync(baseDir, { recursive: true });
   fs.rmSync(diffDir, { recursive: true, force: true });
   const browser = await chromium.launch();
@@ -38,7 +39,7 @@ const server = http.createServer((req, res) => {
       await page.goto(`${base}/${f}`, { waitUntil: 'load' });
       await page.addStyleTag({ content: '.loading-screen{display:none!important} *{animation:none!important;transition:none!important} .back-to-top,.scroll-progress{display:none!important}' });
       await page.evaluate(() => document.fonts.ready);
-      const name = `${f.replace('.html', '')}-${width}.png`;
+      const name = `${f.replace('.html', '').replace(/\//g, '_')}-${width}.png`;
       const shot = await page.screenshot({ fullPage: true });
       const basePath = path.join(baseDir, name);
       if (update || !fs.existsSync(basePath)) { fs.writeFileSync(basePath, shot); created++; continue; }

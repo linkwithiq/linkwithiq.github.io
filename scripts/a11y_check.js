@@ -17,7 +17,8 @@ const server = http.createServer((req, res) => {
 (async () => {
   await new Promise(r => server.listen(0, r));
   const base = `http://localhost:${server.address().port}`;
-  const pages = fs.readdirSync(root).filter(f => f.endsWith('.html')).sort();
+  const listDir = d => fs.readdirSync(path.join(root, d)).filter(f => f.endsWith('.html')).map(f => path.posix.join(d, f));
+  const pages = [...fs.readdirSync(root).filter(f => f.endsWith('.html')), ...listDir('blog'), ...listDir('research')].sort();
   const browser = await chromium.launch();
   let total = 0;
   for (const width of [1280, 390]) {

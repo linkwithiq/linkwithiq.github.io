@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-s4phCGuYb5oXebGSs5nV/1dqlZvCHnw1RnJcRn1pWGM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Why everything we build starts open — Link with iQ</title>
 <meta name="description" content="The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.">
@@ -14,13 +14,13 @@
 
 <meta property="og:title" content="Why everything we build starts open — Link with iQ">
 <meta property="og:description" content="The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.">
-<meta property="og:image" content="../assets/logo-mark-900.png">
-<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/og/og-blog-why-open-by-default.png">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://linkwithiq.github.io/blog/why-open-by-default.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Why everything we build starts open — Link with iQ">
 <meta name="twitter:description" content="The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.">
-<meta name="twitter:image" content="../assets/logo-mark-900.png">
+<meta name="twitter:image" content="../assets/og/og-blog-why-open-by-default.png">
 
 <link rel="canonical" href="https://linkwithiq.github.io/blog/why-open-by-default.html">
 <link rel="manifest" href="../manifest.json">
@@ -28,6 +28,27 @@
 <meta name="color-scheme" content="dark light">
 
 <link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why everything we build starts open",
+  "description": "The case for publishing code from day one, even the embarrassing early commits — and what it costs us to do it that way.",
+  "datePublished": "2026-08",
+  "author": {
+    "@type": "Person",
+    "name": "Ajit",
+    "url": "https://asrbmy.github.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Link with iQ",
+    "url": "https://linkwithiq.github.io/"
+  },
+  "image": "https://linkwithiq.github.io/assets/og/og-blog-why-open-by-default.png",
+  "mainEntityOfPage": "https://linkwithiq.github.io/blog/why-open-by-default.html"
+}
+</script>
 </head>
 <body class="is-loading">
 
@@ -50,7 +71,7 @@
   }, 6000);
 </script>
 
-<a href="../index.html#top" class="skip-link">Skip to content</a>
+<a href="#top" class="skip-link">Skip to content</a>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="site-header">
@@ -81,7 +102,7 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
   <section class="project-detail-hero">
     <div class="wrap">
       <a href="../blog.html" class="back-link">
@@ -152,7 +173,7 @@
         <p>An independent research and development organization building practical, private, and open technology.</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="../index.html#mission">Mission</a>
         <a href="../index.html#projects">Projects</a>
         <a href="../resources.html">Resources</a>
@@ -160,24 +181,30 @@
         <a href="../index.html#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Read</h4>
+        <h3>Read</h3>
         <a href="../blog.html">Blog</a>
         <a href="../research.html">Research</a>
         <a href="../news.html">News</a>
+        <a href="../changelog.html">Changelog</a>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="../about.html">About</a>
+        <a href="../uses.html">Uses</a>
+        <a href="../accessibility.html">Accessibility</a>
+        <a href="../brand.html">Brand kit</a>
         <a href="../policy.html">Policy</a>
         <a href="../terms.html">Terms &amp; Privacy</a>
         <a href="https://github.com/linkwithiq" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="mailto:hello@linkwithiq.dev">Email</a>
+        <a href="mailto:linkwithiq@proton.me">Email</a>
+        <a href="mailto:linkwithiq@proton.me?subject=Problem%20with%20a%20page" class="report-link">Report a problem</a>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="noopener noreferrer">Ajit (asrbmy)</a></span>
+      <span>© <span id="year"></span> Link with iQ — owned &amp; maintained by <a href="https://asrbmy.github.io" target="_blank" rel="me noopener noreferrer">Ajit (asrbmy)</a></span>
       <span>Built in the open · <a href="https://linkwithiq.github.io" target="_blank" rel="noopener noreferrer">linkwithiq.github.io</a></span>
+      <button type="button" class="comfort-toggle" id="comfortToggle" aria-pressed="false" hidden>Comfortable reading</button>
     </div>
   </div>
 </footer>

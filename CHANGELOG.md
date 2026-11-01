@@ -32,11 +32,16 @@ Roughly ordered by what's likely to land soonest. Nothing here is promised; see 
 - Optional "Comfortable reading" button (larger, more widely spaced text, saved in this browser only; disclosed in `terms.html`)
 - Visual regression check (`scripts/visual_check.js` + workflow), `scripts/update_lastmod.py`, and `docs/LAUNCH_CHECKLIST.md`
 
+- Project detail pages (`project.html?slug=…`) now work: `script.js` fills them from `data/projects.js`, with a "Details" link on every home-page project card
+- `.github/FUNDING.yml` (GitHub Sponsors: linkwithiq); per-post social images and BlogPosting/Article structured data for blog posts and the research note; blog and research pages are in the sitemap
+
 ### Security
 - Inline scripts are now allowed by hash instead of `'unsafe-inline'` in the Content-Security-Policy; `scripts/csp_hashes.py` regenerates the hashes and `check_site.py` fails if one is missing
 - Links and avatar images from the GitHub API are only used if they point at github.com or avatars.githubusercontent.com
 
 ### Fixed
+- Blog and research pages brought in line with the rest of the site (self-hosted fonts, hash-based CSP, current email, footer links, skip link)
+- Service worker now registers from the site root so it also covers `blog/` and `research/`
 - Spacing: less dead space under page titles on inner pages; on phones and tablets the home page headline and buttons now come before the large logo
 - Heading levels no longer skip (footer headings, post lists); axe best-practice rules now pass
 - `project.html` shows a "couldn't find that project" message instead of a blank page when nothing has filled in the template

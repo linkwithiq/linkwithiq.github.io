@@ -322,6 +322,45 @@ async function loadProjectStats() {
   });
   await Promise.all(requests);
 }
+// ---- project.html: fill the template from data/projects.js (?slug=...) ----
+(function renderProjectPage(){
+  const content = document.getElementById('projectContent');
+  const notFound = document.getElementById('projectNotFound');
+  if (!content || !notFound) return;
+  const list = Array.isArray(window.LINKWITHIQ_PROJECTS) ? window.LINKWITHIQ_PROJECTS : [];
+  const slug = new URLSearchParams(location.search).get('slug');
+  const p = list.find(x => x && x.slug === slug);
+  if (!p) { notFound.hidden = false; return; }
+
+  const set = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text || ''; };
+  const status = document.getElementById('pStatus');
+  if (status) { status.className = 'project-status ' + (/^[a-z]+$/.test(p.status || '') ? p.status : ''); status.textContent = p.statusLabel || ''; }
+  set('pName', p.name); set('pSummary', p.summary);
+  set('pProblem', p.problem); set('pApproach', p.approach); set('pOutcome', p.outcome);
+  const tags = document.getElementById('pTags');
+  if (tags) (p.tags || []).forEach(t => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = t; tags.appendChild(span); });
+
+  const repoUrl = safeGitHubUrl('https://github.com/' + p.repo, ['github.com']);
+  const link = document.getElementById('pRepoLink');
+  if (link && repoUrl) link.href = repoUrl; else if (link) link.hidden = true;
+
+  // live stats and contributors reuse the same GitHub loaders as the home page and Community page
+  content.dataset.repo = p.repo;
+  const stats = document.getElementById('pStats');
+  if (stats) { stats.classList.remove('is-loading'); stats.textContent = ''; stats.hidden = true; }
+  const avatars = document.getElementById('contributorAvatars');
+  const contributors = document.getElementById('projectContributors');
+  if (avatars) avatars.dataset.repos = p.repo;
+  if (contributors) contributors.hidden = false;
+
+  document.title = p.name + ' — Link with iQ';
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc && p.summary) desc.setAttribute('content', p.summary);
+  content.hidden = false;
+  const body = document.getElementById('projectBody');
+  if (body) body.hidden = false;
+})();
+
 if (document.querySelector('[data-repo]')) {
   loadProjectStats();
 }
@@ -464,7 +503,7 @@ if (!PREFERS_REDUCED_MOTION && 'IntersectionObserver' in window) {
 // ---- offline support: cache this site's own files so visited pages open without a connection ----
 if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => { /* offline support is optional */ });
+    navigator.serviceWorker.register('/sw.js').catch(() => { /* offline support is optional */ });
   });
 }
 

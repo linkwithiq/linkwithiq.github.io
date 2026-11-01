@@ -3,8 +3,9 @@
 ## Before the first public push
 - [ ] Fill in `now.html` (or leave it hidden: it is `noindex`, out of the sitemap, and unlinked from footers). When it has real content, remove the `noindex`, add it to `sitemap.xml`, restore the footer link, and remove it from the exclusion list in `scripts/check_site.py`.
 - [ ] Replace the placeholder dates in `feed.xml` and `feed.json` (all items say 1 Aug 2026).
-- [ ] Confirm the six project repos linked from the home page exist under github.com/linkwithiq.
-- [ ] Keep your own copies of files not generated here: `blog/`, `research/`, `data/projects.js`, `assets/svg/`, `assets/favicon-*.png`, `assets/logo-mark-900.png`.
+- [ ] Confirm the six project repos linked from the home page exist under github.com/linkwithiq (the Details pages and live stats depend on them).
+- [ ] GitHub Sponsors: `.github/FUNDING.yml` points at `linkwithiq`. Make sure Sponsors is enabled for that account, or GitHub shows an error on the file; otherwise delete the file.
+- [ ] Delete stray files at the repo root: `gitignore` (the real one is `.gitignore`), `security.txt` (the real one is `.well-known/security.txt`), `favicon-512-maskable.png`, `og-about.png`, `og-community.png`, `og-index.png` (the real ones live under `assets/`).
 - [ ] `python3 scripts/check_site.py` and `node scripts/a11y_check.js` both pass.
 
 ## GitHub repository settings

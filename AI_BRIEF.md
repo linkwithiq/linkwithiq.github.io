@@ -44,7 +44,7 @@ index, about, resources, blog, research, news, community, changelog, project, po
 `--ink #1a1108`, `--ink-soft`, `--ink-panel`, `--cream #f4ebd7`, `--cream-dim`, `--rust #f0823a` (graphic fills), `--link #f29659` (small accent text), `--on-accent` (dark text on rust), `--signal`/`--signal-br` (green status). Dark, warm, mountain-peak logo motif. Founder logo marks: `assets/asrbmy-mark-cream.png`, `assets/asrbmy-mark-rust.png`.
 
 ## Quality checks before finishing any task
-1. Run `python3 scripts/check_site.py`. It checks internal links and anchors, sitemap freshness, and XML/JSON/JSON-LD validity. It must print "All checks passed". (A GitHub Actions workflow runs it too.)
+1. Run `python3 scripts/check_site.py`. It checks internal links and anchors (including `blog/` and `research/`), CSP coverage of inline scripts, sitemap freshness, feeds, JSON-LD, weight budget, and that removed features haven't crept back. It must print "All checks passed". (A GitHub Actions workflow runs it too.)
 2. If you add a page, add it to `sitemap.xml` (with `<lastmod>`) and link it in the footer, or add it to the exclusion list in the checker on purpose.
 3. If you change behavior, update `CHANGELOG.md` / `changelog.html` truthfully.
 4. Check at phone width (about 390px) and desktop; no horizontal scroll.
@@ -53,8 +53,9 @@ index, about, resources, blog, research, news, community, changelog, project, po
 ## Open items (waiting on Ajit)
 - `now.html` is a placeholder template: it is `noindex`, out of the sitemap, and unlinked from footers until real content arrives.
 - `feed.xml` dates are placeholders (1 Aug 2026) until real publish dates are supplied.
-- Not yet in the repo for editing: `blog/*.html`, `research/*.html`, `data/projects.js`, and original logo exports.
-- Possible additions needing Ajit's yes: CODE_OF_CONDUCT.md, FUNDING.yml, Giscus comments (needs a terms disclosure), project screenshots and detail pages.
+- Blog posts (`blog/`), the research note (`research/`), `data/projects.js` and the logo exports are in the repo. `project.html?slug=…` is filled in by `script.js` from `data/projects.js`.
+- GitHub Sponsors is `linkwithiq` (`.github/FUNDING.yml`); Ajit has no custom domain.
+- Possible additions needing Ajit's yes: Giscus comments (needs a terms disclosure), project screenshots.
 
 ## How to work with Ajit
 Do one feature at a time. Explain briefly what you changed. Stay inside the policy rules above, and ask before anything that touches privacy, third parties, or public claims. If something can't be verified, say so.
